@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-{% load static %}
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -16,6 +15,7 @@
     <div id="web__content">
       <figure class="hero">
         <a href="" class="hero__img">
+          {% load static %}
           <img src="{% static 'Image/origami_satellite.jpg' %}" alt="" />
         </a>
         <figcaption>
@@ -117,7 +117,10 @@
         </article>
       </div>
     </div>
-    <footer w3-include-html="{% static 'HTML/footer.html' %}" class="foot"></footer>
+    <footer
+      w3-include-html="{% static 'HTML/footer.html' %}"
+      class="foot"
+    ></footer>
     <script src="{% static 'JS/nav.js' %}"></script>
     <script>
       includeHTML();
