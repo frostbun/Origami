@@ -1,0 +1,119 @@
+html
+  font-size: clamp(12px,calc(.7rem + .25vw),20px)
+body
+  margin: 0
+  padding: 0
+  font-family: Google Sans
+  background-color: #0A0A2A
+  color: black
+  font-size: 1.3rem
+  a
+    text-decoration: none
+    color: black
+  h1
+    font-size: 3rem
+    margin: 1rem
+.signup
+  flex-direction: row-reverse
+  // if major block is signup, reverse the order
+.back
+  position: absolute
+  top: 10px
+  left: 10px
+  width: 50px
+  height: 50px
+  border: none
+.major
+  box-sizing: border-box
+  width: 100%
+  height: 100vh
+  background: #fff
+  display: flex
+  overflow: hidden
+  &__form
+    box-sizing: border-box
+    padding: 10% 2rem
+    width: 65%
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: space-evenly
+    h1
+      color: #27ae60
+    &__social
+      text-align: center
+      a
+        color: black
+        svg
+          width: 4rem !important
+.textbox
+  width: 80%
+  margin-bottom: 20px
+  position: relative
+  input
+    padding: 1.5rem
+    width: 88%
+    border-radius: 1rem
+    background: #edf1f0
+    border: none
+  input::placeholder
+    color: #aaa
+    font-family: Google Sans
+  input:focus
+    outline: none
+  input
+    font-family: Google Sans
+    font-size: 1.3rem
+  svg
+    position: absolute
+    left: 2rem
+    top: 1.5rem
+    color: #aaa
+#forgot
+  padding: 5px 0
+  border-bottom: 1px dotted #222
+.btn
+  margin-top: 2rem
+  font-size: 1.5rem
+  padding: 1rem 5vw
+  border-radius: 2rem
+  cursor: pointer
+  border: none
+  font-family: Google Sans
+.minor
+  color: white
+  width: 35%
+  background: #27ae60
+  display: flex
+  justify-content: space-evenly
+  flex-direction: column
+  box-sizing: border-box
+  text-align: center
+  padding: 5% 2rem
+  a
+    padding: 1rem 0
+    margin: 2rem 0 0 0
+    border: 1px solid white
+    border-radius: 1.5rem
+  &__button
+    color: white
+@media only screen and (max-width: 1200px)
+  .major
+    flex-direction: column
+    width: 100%
+    height: auto
+    &__form
+      width: 100% !important
+      height: 80vh
+      justify-content: space-evenly
+      padding: 10% 0
+  .textbox
+    input
+      font-size: 2rem
+  .minor
+    width: 100%
+@media only screen and (max-device-width: 600px)
+  .major
+    font-size: 3rem
+  h1
+    font-size: 8rem !important

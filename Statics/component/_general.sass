@@ -1,0 +1,89 @@
+@import ../component/color
+.blog
+  position: relative
+  margin-top: 4rem
+  padding-top: 2rem
+  p
+    color: #bac1c8
+  b
+    font-size: 1.6rem
+  .headline
+    margin-left: 2rem
+.wrapper
+  display: grid
+  grid-template-columns: minmax(0,1fr) 300px
+  gap: 3rem
+  padding: 3rem
+.card__container
+  margin: 0 0 3rem
+  text-align: left
+  display: grid
+  grid-template-columns: repeat(auto-fill,minmax(300px,1fr))
+  gap: 3rem
+  flex-wrap: wrap
+.card
+  border-radius: 10px
+  height: 80vh
+  display: flex
+  flex-direction: column-reverse
+  overflow: hidden
+  background-color: #273d52
+      // 
+  margin-bottom: 40px
+.card__image
+  height: 40vh
+  overflow: hidden
+  img
+    height: 100%
+    width: 100%
+    object-fit: cover
+.card__desc
+  height: 40vh
+  color: #bac1c8
+  padding: 1.5rem
+  box-sizing: border-box
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  p
+    padding: 5px 10px
+    border-radius: 15px
+    font-size: .8rem
+    display: inline-block
+    background-color: rgba(225,225,225,0.1)
+        // 
+    margin: 5px 0 -2px 0
+  svg
+    position: sticky
+    width: 10px
+    z-index: 3
+    opacity: 0.6
+.author
+  display: flex
+  align-items: center
+  img
+    padding: 0 5px
+    width: 10vw
+    max-width: 40px
+    height: 10vw
+    max-height: 40px
+    border-radius: 50%
+.side
+  &__card
+    position: sticky
+    top: 5rem
+    z-index: 1
+    &__content
+      border-radius: 1.3rem
+      padding: 1rem
+      background: #000
+    &::before
+      content: ' '
+      position: absolute
+      top: -2px
+      left: -3px
+      height: calc(100% + 6px)
+      width: calc(100% + 6px)
+      background: linear-gradient(130deg,#ff7a18,#af002d 41.07%,#319197 76.05%)
+      z-index: -4
+      border-radius: 1.3rem

@@ -1,0 +1,115 @@
+$gradient: linear-gradient(130deg,#ff7a18,#af002d 41.07%,#319197 76.05%)
+.hero
+  margin-top: 6rem
+  display: grid
+  grid-template-columns: 50% 50%
+  background: #3b526d
+  border-radius: 8px
+  overflow: hidden
+  &__img
+    object-fit: cover
+    position: relative
+    img
+      width: 110%
+      height: 100%
+  &__img::after
+    pointer-events: none
+    content: ""
+    position: absolute
+    z-index: 3
+    left: 75%
+    height: 100%
+    top: 0
+    width: 50%
+    background: linear-gradient(90deg,hsla(0,0%,100%,0),#3b526d 70%)
+  p
+    padding: 5px 10px
+    border-radius: 15px
+    font-size: 12px
+    display: inline-block
+    background-color: rgba(225,225,225,0.1)
+        // 
+    margin: 5px 0 -2px 0
+  figcaption
+    display: flex
+    z-index: 5
+    flex-direction: column
+    padding: 3rem
+    align-items: start
+.popular-articles
+  padding: 1rem 0.5rem
+  margin: 2vw
+  display: flex
+  gap: 2rem
+  a:hover
+    color: #ddd
+  .popular-header-card
+    height: 54vh
+    width: 175px
+    display: flex
+    margin-left: 1rem
+    flex-direction: column
+    justify-content: flex-end
+    background: #000
+    border-radius: 12px
+    padding: 1.5rem
+    box-sizing: border-box
+    position: relative
+    h1
+      line-height: 1
+      font-size: clamp(1.8rem,calc(1.8rem + .2vw),3rem)
+  .popular-header-card::before
+    content: ""
+    background: linear-gradient(130deg,#ff7a18,#af002d 41.07%,#319197 76.05%)
+    position: absolute
+    top: -5px
+    left: -5px
+    width: calc(100% + 10px)
+    height: calc(100% + 10px)
+    z-index: -1
+    border-radius: 12px
+  .mini-card-container
+    display: flex
+    .mini-card
+      flex: 0 0 280px
+      height: 350px
+      display: flex
+      box-sizing: border-box
+      flex-direction: column
+      justify-content: space-between
+      padding: 1.5rem
+      background: linear-gradient(85deg,#434343,#262626)
+      border-radius: 16px
+      margin-left: -80px
+      box-shadow: -2rem 0 3rem -2rem #000
+      font-size: .9rem
+      .tag
+        font-size: .8rem
+        margin: 3px
+        text-align: center
+        color: #ff7a18
+      .tag:hover
+        color: #b36630
+      h3
+        margin: 5px 0
+        font-size: 1.2rem
+      time, .author-name-prefix
+        color: #7a7a8c
+    .author
+      display: flex
+      align-items: center
+      img
+        padding: 0 5px
+        width: 10vw
+        max-width: 40px
+        height: 10vw
+        max-height: 40px
+        border-radius: 50%
+    .mini-card:first-child
+      margin-left: 0px
+    .mini-card:hover
+      margin-right: 105px
+      transform: rotate(3deg) translateY(1px) translateX(13px)
+@import ../component/footer
+@import ../component/nav
+@import ../component/media
