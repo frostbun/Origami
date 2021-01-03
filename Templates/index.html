@@ -1,21 +1,22 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Origami</title>
-    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;800&display=swap"
     />
   </head>
   <body>
-    <nav w3-include-html="nav.html" id="nav"></nav>
+    <nav w3-include-html="{% static 'HTML/nav.html' %}" id="nav"></nav>
     <div id="web__content">
       <figure class="hero">
         <a href="" class="hero__img">
-          <img src="Image/origami_satellite.jpg" alt="" />
+          <img src="{% static 'Image/origami_satellite.jpg' %}" alt="" />
         </a>
         <figcaption>
           <p>31/12/2020, 07:24</p>
@@ -56,7 +57,7 @@
             <a href="" class="tag"><b>Lịch sử</b></a>
           </header>
           <div class="author">
-            <img src="Image/hung.jpg" alt="" />
+            <img src="{% static 'Image/hung.jpg' %}" alt="" />
             <a href="" class="author-name">Đào Duy Hưng</a>
           </div>
         </article>
@@ -74,7 +75,7 @@
             <a href="" class="tag"><b>Lịch sử</b></a>
           </header>
           <div class="author">
-            <img src="Image/hung.jpg" alt="" />
+            <img src="{% static 'Image/hung.jpg' %}" alt="" />
             <a href="" class="author-name">Đào Duy Hưng</a>
           </div>
         </article>
@@ -92,7 +93,7 @@
             <a href="" class="tag"><b>Lịch sử</b></a>
           </header>
           <div class="author">
-            <img src="Image/hung.jpg" alt="" />
+            <img src="{% static 'Image/hung.jpg' %}" alt="" />
             <a href="" class="author-name">Đào Duy Hưng</a>
           </div>
         </article>
@@ -110,7 +111,7 @@
             <a href="" class="tag"><b>Lịch sử</b></a>
           </header>
           <div class="author">
-            <img src="Image/hung.jpg" alt="" />
+            <img src="{% static 'Image/hung.jpg' %}" alt="" />
             <a href="" class="author-name">Đào Duy Hưng</a>
           </div>
         </article>
@@ -161,8 +162,8 @@
       perspiciatis exercitationem ab ullam perferendis at. Labore non culpa
       voluptate!
     </p>
-    <footer w3-include-html="footer.html" class="foot"></footer>
-    <script src="nav.js"></script>
+    <footer w3-include-html="{% static 'HTML/footer.html' %}" class="foot"></footer>
+    <script src="{% static 'nav.js' %}"></script>
     <script>
       includeHTML();
     </script>

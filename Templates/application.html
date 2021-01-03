@@ -1,13 +1,14 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="category_css/category.css" />
+    <link rel="stylesheet" href="{% static 'category_css/category.css' %}" />
   </head>
   <body>
-    <nav w3-include-html="nav.html" id="nav"></nav>
+    <nav w3-include-html="{% static 'HTML/nav.html' %}" id="nav"></nav>
     <section class="blog">
       <p class="headline">
         <b class="red">Ứng dụng &nbsp &nbsp </b> Tin tức, cập nhật và câu
@@ -15,10 +16,10 @@
       </p>
       <div class="wrapper">
         <section class="card__container">
-          <a href="" w3-include-html="card.html" class="card"> </a>
-          <a href="" w3-include-html="card.html" class="card"> </a>
-          <a href="" w3-include-html="card.html" class="card"> </a>
-          <a href="" w3-include-html="card.html" class="card"> </a>
+          <a href="" w3-include-html="{% static 'HTML/card.html' %}" class="card"> </a>
+          <a href="" w3-include-html="{% static 'HTML/card.html' %}" class="card"> </a>
+          <a href="" w3-include-html="{% static 'HTML/card.html' %}" class="card"> </a>
+          <a href="" w3-include-html="{% static 'HTML/card.html' %}" class="card"> </a>
         </section>
         <section class="side">
           <article class="side__card">
@@ -35,8 +36,8 @@
         </section>
       </div>
     </section>
-    <footer w3-include-html="footer.html" class="foot"></footer>
-    <script src="nav.js"></script>
+    <footer w3-include-html="{% static 'HTML/footer.html' %}" class="foot"></footer>
+    <script src="{% static 'JS/nav.js' %}"></script>
     <script>
       includeHTML();
     </script>
