@@ -1,13 +1,14 @@
 <!DOCTYPE html>
+{% load static %}
 <html>
   <head>
     <title>Origami FPT</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="signin_css/signin.css" />
+    <link rel="stylesheet" href="{% static 'signin_css/signin.css' %}" />
   </head>
 
   <body>
-    <a href="index.html" class="back">
+    <a href="/" class="back">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="16"
@@ -62,9 +63,9 @@
       <section class="minor">
         <h1>Already in ?</h1>
         <span>Đăng nhập và tiếp tục khám phá trang &nbsp </span>
-        <a href="signin.html" class="minor__button">Đăng nhập</a>
+        <a href="/signin" class="minor__button">Đăng nhập</a>
       </section>
     </article>
-    <script src="nav.js"></script>
+    <script src="{% static 'nav.js' %}"></script>
   </body>
 </html>

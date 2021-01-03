@@ -19,5 +19,10 @@ from OrigamiApp import views
 
 urlpatterns = [
     path('', views.index),
+    path('application/', views.application),
+    path('history/', views.history),
+    path('method/', views.method),
+    path('signin/', views.signin),
+    path('signup/', views.signup),
     path('admin/', admin.site.urls),
 ]
