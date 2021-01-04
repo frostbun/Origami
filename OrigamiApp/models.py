@@ -13,7 +13,7 @@ class UserProfile(models.Model):
 class UserBlog(models.Model):
     user = models.ForeignKey(UserProfile, on_delete=any)
     blog = models.CharField(max_length = 1000000000)
-    date_posted = models.DateTimeField()
+    date_posted = models.DateTimeField(auto_now= True)
     cover = models.ImageField(upload_to = 'blog_covers', blank = True, )
 
     def __str__(self):
