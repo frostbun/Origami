@@ -19,3 +19,6 @@ def signin(request):
 
 def signup(request):
     return render(request, 'signUp.html')
+
+def blog(request):
+    return render(request, 'sample_blog.html')

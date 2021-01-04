@@ -5,7 +5,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background-color: #172b3d;
+  background-color: #262626;
   color: #fff;
   font-family: Google Sans, Manrope;
   overflow-x: hidden;
@@ -75,10 +75,7 @@ nav .opened .line2 {
 }
 
 .nav {
-  background: #3e536d;
-  border: 1px solid #172b3d;
-  border-radius: 0 0 2rem 2rem;
-  width: 1000px;
+  background: #262626;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   height: 4rem;
@@ -87,7 +84,6 @@ nav .opened .line2 {
   display: -ms-flexbox;
   display: flex;
   gap: 2rem;
-  margin-left: calc(50vw - 470px);
   position: relative;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -135,6 +131,19 @@ nav .opened .line2 {
   width: 40px;
   height: 40px;
   z-index: 99;
+}
+
+body::after {
+  content: ' ';
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(#262626)), url("../Image/crease2.png");
+  background: linear-gradient(transparent, #262626), url("../Image/crease2.png");
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -99;
+  opacity: 0.4;
 }
 
 .purple {
@@ -211,7 +220,7 @@ nav .opened .line2 {
       -ms-flex-direction: column-reverse;
           flex-direction: column-reverse;
   overflow: hidden;
-  background-color: #273d52;
+  background-color: #3d3d3d;
   margin-bottom: 40px;
 }
 
@@ -313,7 +322,7 @@ nav .opened .line2 {
   height: 15rem;
   padding: 16px 4vw;
   display: block;
-  background: #3e536d;
+  background: #404040;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

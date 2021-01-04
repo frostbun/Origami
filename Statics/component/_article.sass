@@ -1,44 +1,19 @@
-body
-  background: #eee
 .content
-  width: 850px
-  margin-left: calc(50vw - 470px)
+  margin: 5rem 3rem 4rem 3rem
   h1
     font-size: 2rem
-  img
-    width: 940px
-    border-radius: 20px 20px 0 0
-    height: 500px
-    object-fit: cover
-  .article
-    border-radius: 0 0 20px 20px
-    background: #172b3d
-    width: 880px
-    padding: 0 30px
-    font-size: 16px
-    line-height: 32px
+  &__grid
+    display: grid
+    grid-template-columns: minmax(0,1fr) 300px
+    gap: 3rem
+.article
+  border-radius: 1rem
+  background: #fff
+  color: #111
+  padding: 3rem 2rem
+  font-size: 1.2rem
+  line-height: 1.5rem
     // 
-    margin: auto
-    margin-top: -21px
-    h1
-      font-size: 2rem
-      line-height: 2.2rem
-  .article::before
-    content: ' '
-    width: 100vw
-    height: 80vh
-    background: #172b3d
-    // st
-    z-index: -1
-    position: absolute
-    top: 0
-    left: 0
-.path
-  display: block
-  width: 500px
-  height: 5.4rem
-  border-radius: 0 0 20px 2rem
-  background-image: linear-gradient(90deg,#4CCB70 0%,#30A478 100%)
-  // 
-  margin-top: 8px
-  margin-left: calc(50vw - 470px)
+  h1
+    font-size: 2rem
+    line-height: 2.1rem
