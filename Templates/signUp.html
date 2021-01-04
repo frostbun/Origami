@@ -60,28 +60,28 @@
 					   type="text" 
 					   placeholder="First Name" 
 					   name="first_name" 
-					   value=""/>
+					   value="{{ first_name }}"/>
 			</div>
 			<div class="textbox">
 			  <input id="id_last_name" 
 					   type="text" 
 					   placeholder="Last Name" 
 					   name="last_name" 
-					   value=""/>
+					   value="{{ last_name }}"/>
 			</div>
 			<div class="textbox">
 			  <input id="id_email" 
 					   type="text" 
 					   placeholder="Email" 
 					   name="email" 
-					   value=""/>
+					   value="{{ email }}"/>
 			</div>
             <div class="textbox">
 			  <input id="id_username" 
 					   type="text" 
 					   placeholder="Username" 
 					   name="username" 
-					   value="" 
+					   value="{{ username }}" 
 					   required/>
             </div>
             <div class="textbox">
@@ -91,7 +91,8 @@
 					   name="password" 
 					   value="" 
 					   required/>
-            </div>
+			</div>
+			<input id="id_pic" type="hidden" name="pic" value="{% static 'Image/blank_avt.jpg' %}">
             <input class="btn" type="submit" value="Sign up" />
         </form>
         
