@@ -92,10 +92,9 @@
 					   value="" 
 					   required/>
 			</div>
-			<input id="id_pic" type="hidden" name="pic" value="{% static 'Image/blank_avt.jpg' %}">
+			<p style="color: crimson;">{{error}}</p>
             <input class="btn" type="submit" value="Sign up" />
         </form>
-        
       </section>
       <section class="minor">
         <h1>Already in ?</h1>
@@ -103,6 +102,6 @@
         <a href="/signin" class="minor__button">Đăng nhập</a>
       </section>
     </article>
-    <script src="{% static 'nav.js' %}"></script>
+    <script src="{% static 'JS/nav.js' %}"></script>
   </body>
 </html>

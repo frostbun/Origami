@@ -1,7 +1,12 @@
 from django.shortcuts import render
+from django.http import HttpResponse, HttpResponseRedirect
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
+
 from OrigamiApp.forms import UserSignUp, UserProfileSignUp
 from OrigamiApp.models import UserProfile, UserBlog
 from django.contrib.auth.models import User
+from django.db.models import Model
 
 # Create your views here.
 
@@ -19,19 +24,20 @@ def method(request):
 
 def signin(request):
     return render(request, 'signin.html')
-
+          
 def signup(request):
     if request.method == 'POST':
         form = UserSignUp(request.POST)
         profile_form = UserProfileSignUp(request.POST)
 
+        username = request.POST.get('username')
+        first_name = request.POST.get('first_name')
+        last_name = request.POST.get('last_name')
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+
         if form.is_valid() and profile_form.is_valid():
             error = ''
-            username = form.cleaned_data['username']
-            first_name = form.cleaned_data['first_name']
-            last_name = form.cleaned_data['last_name']
-            email = form.cleaned_data['email']
-            password = form.cleaned_data['password']
 
             if email.find('.') < email.find('@'):
                 error = 'Please enter a valid email!'
@@ -41,20 +47,27 @@ def signup(request):
 
             if len(error):
                 return render(request, 'signUp.html', {'error': error,
-                                                       'username': username,
-                                                       'email': email,
-                                                       'firsr_name': first_name,
-                                                       'last_name': last_name, })
-
+                                                        'username': username,
+                                                        'email': email,
+                                                        'first_name': first_name,
+                                                        'last_name': last_name, })
+    
             user = form.save()
             user.set_password(user.password)
             user.save()
 
             profile = profile_form.save(commit=False)
             profile.user = user
-            profile.pic = request.FILES['pic']
             profile.save()
-
+        
+        elif str(form.errors).find('exists') > -1:
+            return render(request, 'signUp.html', {'error': 'A user with that username already exists!',
+                                                    'username': username,
+                                                    'email': email,
+                                                    'first_name': first_name,
+                                                    'last_name': last_name, })
+    
+        return HttpResponseRedirect('/signin')
 
     return render(request, 'signUp.html')
 

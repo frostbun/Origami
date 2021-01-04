@@ -13,6 +13,8 @@ class UserProfile(models.Model):
 class UserBlog(models.Model):
     user = models.ForeignKey(UserProfile, on_delete=any)
     blog = models.CharField(max_length = 1000000000)
+    date_posted = models.DateTimeField()
+    cover = models.ImageField(upload_to = 'blog_covers', blank = True, )
 
     def __str__(self):
         return self.user.username + '\'s blog'
