@@ -31,49 +31,6 @@
       <section class="major__form">
         <h1>Sign up</h1>
 
-<<<<<<< Updated upstream
-		<form enctype="multipart/form-data", method="POST">
-			{% csrf_token %}
-			<div class="textbox">
-			  <input id="id_first_name" 
-					   type="text" 
-					   placeholder="First Name" 
-					   name="first_name" 
-					   value="{{ first_name }}"/>
-			</div>
-			<div class="textbox">
-			  	<input id="id_last_name" 
-					   type="text" 
-					   placeholder="Last Name" 
-					   name="last_name" 
-					   value="{{ last_name }}"/>
-			</div>
-			<div class="textbox">
-				<input id="id_email" 
-					   type="text" 
-					   placeholder="Email" 
-					   name="email" 
-					   value="{{ email }}"/>
-			</div>
-            <div class="textbox">
-				<input id="id_username" 
-					type="text" 
-					placeholder="Username" 
-					name="username" 
-					value="{{ username }}" 
-					required/>
-            </div>
-            <div class="textbox">
-				<input id="id_password" 
-						type="password" 
-						placeholder="Password" 
-						name="password" 
-						value="" 
-						required/>
-			</div>
-			<p style="color: crimson;">{{error}}</p>
-            <input class="btn" type="submit" value="Sign up" />
-=======
         <form enctype="multipart/form-data" , method="POST">
           {% csrf_token %}
           <div class="textbox">
@@ -97,7 +54,7 @@
           <div class="textbox">
             <input
               id="id_email"
-              type="text"
+              type="email"
               placeholder="Email"
               name="email"
               value="{{ email }}"
@@ -125,7 +82,6 @@
           </div>
           <p style="color: crimson">{{error}}</p>
           <input class="btn" type="submit" value="Sign up" />
->>>>>>> Stashed changes
         </form>
       </section>
       <section class="minor">

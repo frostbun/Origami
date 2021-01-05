@@ -59,16 +59,8 @@ def signup(request):
         password = request.POST.get('password')
 
         if form.is_valid() and profile_form.is_valid():
-            error = ''
-
-            if email.find('.') < email.find('@'):
-                error = 'Please enter a valid email!'
-            
             if len(password) < 8:
-                error = 'Password must be longer than 8 characters!'
-
-            if len(error):
-                return render(request, 'signUp.html', {'error': error,
+                return render(request, 'signUp.html', {'error': 'Password must be longer than 8 characters!',
                                                         'username': username,
                                                         'email': email,
                                                         'first_name': first_name,
