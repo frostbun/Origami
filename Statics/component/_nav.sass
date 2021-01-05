@@ -1,3 +1,4 @@
+@import ../component/utility
 html
   font-size: clamp(12px,calc(.7rem + .25vw),20px)
 body
@@ -15,11 +16,9 @@ nav
   z-index: 9
   font-size: 14px
   top: 0
-  position: fixed
   input
     display: none
   label
-    position: absolute
     top: 10px
     left: 12px
     cursor: pointer
@@ -27,40 +26,34 @@ nav
     border-radius: 50%
     height: 40px
     opacity: 0
-  svg
-    height: 2.5rem
-    width: 2.5rem
-    .line
-      fill: none
-      stroke: #4ccb70
-      stroke-width: 6
-      transition: stroke-dasharray 200ms cubic-bezier(0.4, 0, 0.2, 1), stroke-dashoffset 400ms cubic-bezier(0.4, 0, 0.2, 1)
-    .line1, .line3
-      stroke-dasharray: 60 207
-      stroke-width: 6
-
-    .line2
-      stroke-dasharray: 60 60
-      stroke-width: 6
-
+svg
+  height: 2.5rem
+  width: 2.5rem
+  .line
+    fill: none
+    stroke: #4ccb70
+    stroke-width: 6
+    transition: stroke-dasharray 200ms cubic-bezier(0.4, 0, 0.2, 1), stroke-dashoffset 400ms cubic-bezier(0.4, 0, 0.2, 1)
+  .line1, .line3
+    stroke-dasharray: 60 207
+    stroke-width: 6
+  .line2
+    stroke-dasharray: 60 60
+    stroke-width: 6
   .opened .line1,.opened .line3
     stroke-dasharray: 90 207
     stroke-dashoffset: -134
     stroke-width: 6
-
   .opened .line2
     stroke-dasharray: 1 60
     stroke-dashoffset: -30
     stroke-width: 6
 .nav
   background: #262626
-  box-sizing: border-box
   height: 4rem
   padding: 0 2vw
-  display: flex
   gap: 2rem
   // divide
-  position: relative
   align-items: center
   #logo
     width: 140px
@@ -81,21 +74,11 @@ nav
       // 
       margin: 0 -1.2px
 #signin
-  color: #4ccb70
+  color: #fff
   width: 2rem
-  padding: 0px 20px
-  // 
-  position: absolute
-  right: 0
+  right: 20px
   svg
     width: 2.5rem
-#totop
-  position: fixed
-  bottom: 10px
-  right: 10px
-  width: 40px
-  height: 40px
-  z-index: 99
 body::after
   content: ' '
   background: linear-gradient(transparent, #262626), url('../Image/crease2.png')
