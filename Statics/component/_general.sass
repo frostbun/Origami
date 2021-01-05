@@ -23,11 +23,11 @@
   flex-wrap: wrap
 .card
   border-radius: 10px
-  height: 80vh
+  height: 90vh
   display: flex
   flex-direction: column-reverse
   overflow: hidden
-  background-color: #3d3d3d
+  background-color: #303030
       // 
   margin-bottom: 40px
 .card__image
@@ -38,9 +38,9 @@
     width: 100%
     object-fit: cover
 .card__desc
-  height: 40vh
+  height: 50vh
   color: #bac1c8
-  padding: 1.5rem
+  padding: 1.5rem 
   box-sizing: border-box
   display: flex
   flex-direction: column
@@ -56,14 +56,15 @@
   svg
     position: sticky
     width: 10px
+    height: 100%
     z-index: 3
     opacity: 0.6
 .author
   display: flex
   align-items: center
   img
-    padding: 0 5px
     width: 10vw
+    margin: 0 5px
     max-width: 40px
     height: 10vw
     max-height: 40px
@@ -74,16 +75,16 @@
     top: 5rem
     z-index: 1
     &__content
-      border-radius: 1.3rem
+      border-radius: 8px
       padding: 1rem
       background: #000
     &::before
       content: ' '
       position: absolute
-      top: -2px
+      top: -3px
       left: -3px
       height: calc(100% + 6px)
       width: calc(100% + 6px)
       background: linear-gradient(130deg,#ff7a18,#af002d 41.07%,#319197 76.05%)
       z-index: -4
-      border-radius: 1.3rem
+      border-radius: 12px

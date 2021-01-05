@@ -44,11 +44,12 @@ window.onscroll = function (e) {
 };
 
 function showname(i) {
-  var p = document.getElementById("desc");
+  var p = document.getElementById("contact__desc");
   p.innerHTML = i;
 }
+
 function hidename() {
-  var p = document.getElementById("desc");
+  var p = document.getElementById("contact__desc");
   p.innerHTML = "Hover or click in avatar";
 }
 

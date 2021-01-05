@@ -12,13 +12,17 @@
     />
   </head>
   <body>
-    <nav w3-include-html="{% static 'HTML/nav.html' %}" id="nav" class="po__fixed"></nav>
+    <nav
+      w3-include-html="{% static 'HTML/nav.html' %}"
+      id="nav"
+      class="po__fixed"
+    ></nav>
     <div id="web__content">
       <figure class="hero d__g borr-1">
         <a href="/blog" class="hero__img po__re">
           <img src="{% static 'Image/origami_satellite.jpg' %}" alt="" />
         </a>
-        <figcaption class="d__f fd__cl ">
+        <figcaption class="d__f fd__cl">
           <p class="d__ib borr-1">31/12/2020, 07:24</p>
           <a href=""><h1 style="color: #111">Ứng dụng Origami</h1></a>
           <span
@@ -31,7 +35,7 @@
       </figure>
     </div>
     <div class="populars d__f">
-      <header class="populars__headcard d__f fd__cl jc__fe po__re borr-1">
+      <header class="populars__headcard d__f fd__cl jc__fe po__re">
         <h1>Popular this month</h1>
       </header>
       <div class="populars__container d__f">

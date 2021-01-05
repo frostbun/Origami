@@ -63,6 +63,7 @@
   padding: 1.5rem;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  border-radius: 8px;
 }
 
 .populars__headcard h1 {
@@ -281,7 +282,7 @@ svg .opened .line2 {
 }
 
 .nav {
-  background: #262626;
+  background: #2d2d2d;
   height: 4rem;
   padding: 0 2vw;
   gap: 2rem;
@@ -306,10 +307,16 @@ svg .opened .line2 {
 }
 
 .nav_buttons a {
-  padding: 0 20px;
-  line-height: 4rem;
+  padding: 0 1rem;
+  margin: 0 10px;
+  line-height: 2.5rem;
   display: inline-block;
-  margin: 0 -1.2px;
+  border-radius: 8px;
+}
+
+.nav_buttons a:hover {
+  margin: 0 8px;
+  border: 2px solid #aaa;
 }
 
 #signin {
