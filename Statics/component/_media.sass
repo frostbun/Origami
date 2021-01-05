@@ -41,29 +41,20 @@
     .nav_buttons
       left: 0 !important
       opacity: 1
-  .path
-    margin-left: 0
-    width: 60vw
-  .content
-    width: 90%
-    margin-left: 5%
-    img
-      width: 100%
-      height: 40vw
-    .article
-      width: calc(100% - 58px)
+  //nav -> populars
   .mini-card
     flex: 0 0 200px !important
   .mini-card:hover
     transform: translateY(-7px) !important
-@media only screen and (max-width: 768px)
+@media only screen and (max-width: 800px)
   .wrapper
-    display: block
+    display: block !important
     .card__container
       a
         width: 100% !important
     .side
       display: none
+  // category -> main
   .hero
     grid-template-columns: 1fr
     &__img::after
@@ -72,15 +63,10 @@
       width: 120%
     figcaption
       padding: 18px
-  .popular-articles
+  .populars
     overflow-x: scroll
 @media only screen and (max-width: 640px)
-  .content
-    width: 100%
-    margin-left: 0
-  .path
-    width: 100%
-  #desc
+  #contact__desc
     display: none !important
 @media only screen and (max-width: 500px)
   .wrapper

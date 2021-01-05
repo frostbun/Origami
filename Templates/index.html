@@ -12,15 +12,15 @@
     />
   </head>
   <body>
-    <nav w3-include-html="{% static 'HTML/nav.html' %}" id="nav"></nav>
+    <nav w3-include-html="{% static 'HTML/nav.html' %}" id="nav" class="po__fixed"></nav>
     <div id="web__content">
-      <figure class="hero">
-        <a href="/blog" class="hero__img">
+      <figure class="hero d__g borr-1">
+        <a href="/blog" class="hero__img po__re">
           <img src="{% static 'Image/origami_satellite.jpg' %}" alt="" />
         </a>
-        <figcaption>
-          <p>31/12/2020, 07:24</p>
-          <a href=""><h1>Ứng dụng Origami</h1></a>
+        <figcaption class="d__f fd__cl ">
+          <p class="d__ib borr-1">31/12/2020, 07:24</p>
+          <a href=""><h1 style="color: #111">Ứng dụng Origami</h1></a>
           <span
             >Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa,
             error! Fuga voluptas accusamus quaerat vitae recusandae quae iusto
@@ -30,12 +30,12 @@
         </figcaption>
       </figure>
     </div>
-    <div class="popular-articles">
-      <header class="popular-header-card">
+    <div class="populars d__f">
+      <header class="populars__headcard d__f fd__cl jc__fe po__re borr-1">
         <h1>Popular this month</h1>
       </header>
-      <div class="mini-card-container">
-        <article class="mini-card">
+      <div class="populars__container d__f">
+        <article class="mini-card d__f fd__cl borr-1">
           <header class="mini-card-header">
             <div class="mini-card-subhead">
               Article
@@ -48,61 +48,7 @@
             </h3>
             <a href="" class="tag"><b>Lịch sử</b></a>
           </header>
-          <div class="author">
-            <img src="{% static 'Image/hung.jpg' %}" alt="" />
-            <a href="" class="author-name">Đào Duy Hưng</a>
-          </div>
-        </article>
-        <article class="mini-card">
-          <header class="mini-card-header">
-            <div class="mini-card-subhead">
-              Article
-              <time datetime="2020-10-14"> Oct 14, 2020 </time>
-            </div>
-            <h3 class="read-article">
-              <a href="read-article-link">
-                How to Create a Realistic Motion Blur with CSS Transitions
-              </a>
-            </h3>
-            <a href="" class="tag"><b>Lịch sử</b></a>
-          </header>
-          <div class="author">
-            <img src="{% static 'Image/hung.jpg' %}" alt="" />
-            <a href="" class="author-name">Đào Duy Hưng</a>
-          </div>
-        </article>
-        <article class="mini-card">
-          <header class="mini-card-header">
-            <div class="mini-card-subhead">
-              Article
-              <time datetime="2020-10-14"> Oct 14, 2020 </time>
-            </div>
-            <h3 class="read-article">
-              <a href="read-article-link">
-                How to Create a Realistic Motion Blur with CSS Transitions
-              </a>
-            </h3>
-            <a href="" class="tag"><b>Lịch sử</b></a>
-          </header>
-          <div class="author">
-            <img src="{% static 'Image/hung.jpg' %}" alt="" />
-            <a href="" class="author-name">Đào Duy Hưng</a>
-          </div>
-        </article>
-        <article class="mini-card">
-          <header class="mini-card-header">
-            <div class="mini-card-subhead">
-              Article
-              <time datetime="2020-10-14"> Oct 14, 2020 </time>
-            </div>
-            <h3 class="read-article">
-              <a href="read-article-link">
-                How to Create a Realistic Motion Blur with CSS Transitions
-              </a>
-            </h3>
-            <a href="" class="tag"><b>Lịch sử</b></a>
-          </header>
-          <div class="author">
+          <div class="author d__f">
             <img src="{% static 'Image/hung.jpg' %}" alt="" />
             <a href="" class="author-name">Đào Duy Hưng</a>
           </div>
