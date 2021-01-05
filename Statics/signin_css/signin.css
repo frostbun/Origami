@@ -52,7 +52,7 @@ body h1 {
 .major__form {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  padding: 10% 2rem;
+  padding: 5% 2rem;
   width: 65%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -64,31 +64,24 @@ body h1 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .major__form h1 {
   color: #27ae60;
 }
 
-.major__form__social {
+form {
   text-align: center;
-}
-
-.major__form__social a {
-  color: black;
-}
-
-.major__form__social a svg {
-  width: 4rem !important;
+  width: 80%;
 }
 
 .textbox {
-  width: 80%;
   margin-bottom: 20px;
   position: relative;
+  width: 100%;
 }
 
 .textbox input {
@@ -125,7 +118,7 @@ body h1 {
 
 .textbox input {
   font-family: Google Sans;
-  font-size: 1.3rem;
+  font-size: 1rem;
 }
 
 .textbox svg {
@@ -141,13 +134,17 @@ body h1 {
 }
 
 .btn {
-  margin-top: 2rem;
   font-size: 1.5rem;
   padding: 1rem 5vw;
   border-radius: 2rem;
   cursor: pointer;
   border: none;
   font-family: Google Sans;
+}
+
+.btn:hover {
+  background: #27ae60;
+  color: white;
 }
 
 .minor {
@@ -181,6 +178,11 @@ body h1 {
   color: white;
 }
 
+.minor__button:hover {
+  background: #fff;
+  color: #111;
+}
+
 @media only screen and (max-width: 1200px) {
   .major {
     -webkit-box-orient: vertical;
@@ -192,14 +194,14 @@ body h1 {
   }
   .major__form {
     width: 100% !important;
-    height: 80vh;
+    height: 90vh;
     -webkit-box-pack: space-evenly;
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
     padding: 10% 0;
   }
   .textbox input {
-    font-size: 2rem;
+    font-size: 1.2rem;
   }
   .minor {
     width: 100%;

@@ -32,24 +32,21 @@ body
   overflow: hidden
   &__form
     box-sizing: border-box
-    padding: 10% 2rem
+    padding: 5% 2rem
     width: 65%
     display: flex
     flex-direction: column
     align-items: center
-    justify-content: space-evenly
+    justify-content: space-between
     h1
       color: #27ae60
-    &__social
-      text-align: center
-      a
-        color: black
-        svg
-          width: 4rem !important
-.textbox
+form
+  text-align: center 
   width: 80%
+.textbox
   margin-bottom: 20px
   position: relative
+  width: 100%
   input
     padding: 1.5rem
     width: 88%
@@ -63,7 +60,7 @@ body
     outline: none
   input
     font-family: Google Sans
-    font-size: 1.3rem
+    font-size: 1rem
   svg
     position: absolute
     left: 2rem
@@ -73,13 +70,15 @@ body
   padding: 5px 0
   border-bottom: 1px dotted #222
 .btn
-  margin-top: 2rem
   font-size: 1.5rem
   padding: 1rem 5vw
   border-radius: 2rem
   cursor: pointer
   border: none
   font-family: Google Sans
+  &:hover
+    background: #27ae60
+    color: white
 .minor
   color: white
   width: 35%
@@ -97,6 +96,9 @@ body
     border-radius: 1.5rem
   &__button
     color: white
+    &:hover
+      background: #fff
+      color: #111
 @media only screen and (max-width: 1200px)
   .major
     flex-direction: column
@@ -104,12 +106,12 @@ body
     height: auto
     &__form
       width: 100% !important
-      height: 80vh
+      height: 90vh
       justify-content: space-evenly
       padding: 10% 0
   .textbox
     input
-      font-size: 2rem
+      font-size: 1.2rem
   .minor
     width: 100%
 @media only screen and (max-device-width: 600px)
