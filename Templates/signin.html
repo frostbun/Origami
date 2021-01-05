@@ -53,14 +53,28 @@
               /></svg></a>
           <p>Hoặc đăng nhập bằng tài khoản Origami:</p>
         </div>
-        <div class="textbox">
-          <input type="text" placeholder="Username" name="" value="" />
-        </div>
-        <div class="textbox">
-          <input type="password" placeholder="Password" name="" value="" />
-        </div>
-        <a href="" id="forgot">Forgot your password ?</a>
-        <input class="btn" type="button" value="Sign in" />
+        <form action="/signin/" method="POST">
+			  {% csrf_token %}
+            <div class="textbox">
+                <input id="id_username" 
+                        type="text" 
+                        placeholder="Username" 
+                        name="username" 
+                        value="{{ username }}" 
+                        required/>
+            </div>
+            <div class="textbox">
+                <input id="id_password" 
+                        type="password" 
+                        placeholder="Password" 
+                        name="password" 
+                        value="" 
+                        required/>
+            </div>
+            <p style="color: crimson;">{{error}}</p>
+            <a href="" id="forgot">Forgot your password ?</a>
+            <input class="btn" type="submit" value="Sign in" />
+        </form>
       </section>
       <section class="minor">
         <h1>New here ?</h1>

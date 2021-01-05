@@ -22,7 +22,29 @@ def application(request):
 def method(request):
     return render(request, 'method.html')
 
+def signout(request):
+    logout(request)
+    return HttpResponseRedirect('/')
+
 def signin(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        error = ''
+        user = authenticate(username = username, password = password)
+        if user:
+            if user.is_active:
+                login(request, user)
+                return HttpResponseRedirect('/')
+            else:
+                error = 'User not active!'
+        else:
+            error = 'Username or password incorrect'
+        
+        return render(request, 'signin.html', {'error': error,
+                                                'username': username})
+
     return render(request, 'signin.html')
           
 def signup(request):
