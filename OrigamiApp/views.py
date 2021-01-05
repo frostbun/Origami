@@ -3,7 +3,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 
-from OrigamiApp.forms import UserSignUp, UserProfileSignUp
+from OrigamiApp.forms import UserSignUp, UserProfileSignUp, UploadBlog
 from OrigamiApp.models import UserProfile, UserBlog
 from django.contrib.auth.models import User
 from django.db.models import Model
@@ -27,6 +27,9 @@ def signout(request):
     return HttpResponseRedirect('/')
 
 def signin(request):
+    if request.user.is_authenticated:
+        return HttpResponseRedirect('/profile')
+
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
@@ -59,12 +62,12 @@ def signup(request):
         password = request.POST.get('password')
 
         if form.is_valid() and profile_form.is_valid():
-            if len(password) < 8:
-                return render(request, 'signUp.html', {'error': 'Password must be longer than 8 characters!',
-                                                        'username': username,
-                                                        'email': email,
-                                                        'first_name': first_name,
-                                                        'last_name': last_name, })
+            # if len(password) < 8:
+            #     return render(request, 'signUp.html', {'error': 'Password must be longer than 8 characters!',
+            #                                             'username': username,
+            #                                             'email': email,
+            #                                             'first_name': first_name,
+            #                                             'last_name': last_name, })
     
             user = form.save()
             user.set_password(user.password)
@@ -87,3 +90,20 @@ def signup(request):
 
 def blog(request):
     return render(request, 'sample_blog.html')
+
+@login_required
+def profile(request):
+    if request.method == 'POST':
+        blog_form = UploadBlog(request.POST, request.FILES)
+        print(request.FILES)
+
+        if blog_form.is_valid():
+            blog = blog_form.save(commit=False)
+            blog.user = request.user
+            blog.save()
+        else:
+            print(blog_form.errors)
+
+    all_blog = UserBlog.objects.filter(user = request.user).order_by('date_posted').reverse
+    return render(request, 'profile_sample.html', {'all_blog': all_blog,
+                                                    'form': UploadBlog})

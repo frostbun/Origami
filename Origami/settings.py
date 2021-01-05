@@ -13,7 +13,7 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATE_DIR = Path.joinpath(BASE_DIR, 'Templates')
 STATIC_DIR = Path.joinpath(BASE_DIR, 'Statics')
-MEDIA_DIR = Path.joinpath(BASE_DIR, 'Medias')
+MEDIA_DIR = Path.joinpath(BASE_DIR, 'media')
 
 
 # Quick-start development settings - unsuitable for production

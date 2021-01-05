@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load static %}
+<head>
+    <title>{{ user.username }}'s profile</title>
+    <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous"
+        >
+    </head>
+    <body>
+        <div class="container">
+            <a href="/signout">Đăng xuất</a>
+            <div class="jumbotron">
+                <h1>Post something</h1>
+            </div>
+            <form method="POST">
+                {% csrf_token %}
+                <textarea id="id_blog" name="blog" rows="10" cols="100" required></textarea>
+                <p>Choose cover: <input type="file" id="id_cover" name="cover"></p>
+                <p><input type="submit" class="btn btn-primary" value="Submit"></p>
+            </form>
+        </div>
+
+        <div class="container">
+            {% for blog in all_blog %}
+                {% if blog.cover %}
+                    <img src="../media/{{ blog.cover }}" width="500" height="100">
+                {% endif %}
+                <p>Date posted: {{ blog.date_posted }}</p>
+                <p>{{ blog.blog }}</p>
+            {% endfor %}
+        </div>
+
+</body>
