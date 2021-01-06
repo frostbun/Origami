@@ -13,7 +13,8 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATE_DIR = Path.joinpath(BASE_DIR, 'Templates')
 STATIC_DIR = Path.joinpath(BASE_DIR, 'Statics')
-MEDIA_DIR = Path.joinpath(BASE_DIR, 'Medias')
+STATIC_ROOT = Path.joinpath(BASE_DIR, 'static')
+MEDIA_ROOT = Path.joinpath(BASE_DIR, 'media')
 
 
 # Quick-start development settings - unsuitable for production
@@ -25,7 +26,7 @@ SECRET_KEY = '7e^2oh*#ek!3*xyu0kt=pd%ee&6b47blcyfhj(rq%phyme$z93'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', ]
 
 
 # Application definition
@@ -133,7 +134,5 @@ STATICFILES_DIRS = [
 ]
 
 MEDIA_URL = '/media/'
-
-MEDIA_ROOT = MEDIA_DIR
 
 LOGIN_URL = '/signin/'

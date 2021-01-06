@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load static %}
+<head>
+    {% if user.first_name %}
+        <title>{{ user.first_name }}'s profile</title>
+    {% else %}
+        <title>{{ user.username }}'s profile</title>
+    {% endif %}
+    <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous"
+        >
+    </head>
+    <body>
+        <div class="container">
+            <a href="/signout">Đăng xuất</a>
+            <div class="jumbotron">
+                <h1>Post something</h1>
+            </div>
+            <form enctype="multipart/form-data", method="POST">
+                {% csrf_token %}
+                <textarea id="id_blog" name="blog" rows="10" cols="100" maxlength="1000000000" required></textarea>
+                <p>Choose cover: <input type="file" id="id_cover" name="cover"></p>
+                <p><input type="submit" class="btn btn-primary" value="Submit"></p>
+            </form>
+        </div>
+
+        {% for blog in all_blog %}
+            <div class="container" style="border: 2px solid rgb(114, 51, 51);">
+                {% if blog.cover %}
+                    <img src="../media/{{ blog.cover }}" width="1000">
+                {% endif %}
+                <p>Date posted: {{ blog.date_posted }}</p>
+                <p>{{ blog.blog|linebreaks }}</p>
+            </div>
+        {% endfor %}
+
+</body>

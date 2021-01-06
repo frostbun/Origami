@@ -30,7 +30,6 @@
     <article class="major">
       <section class="major__form">
         <h1>Login</h1>
-<<<<<<< Updated upstream
         <div class="major__form__social">
           <a href="#"
             ><svg
@@ -59,7 +58,7 @@
           <p>Hoặc đăng nhập bằng tài khoản Origami:</p>
         </div>
         <form action="/signin/" method="POST">
-			  {% csrf_token %}
+			{% csrf_token %}
             <div class="textbox">
                 <input id="id_username" 
                         type="text" 
@@ -77,21 +76,9 @@
                         required/>
             </div>
             <p style="color: crimson;">{{error}}</p>
-            <a href="" id="forgot">Forgot your password ?</a>
+            <!-- <a href="" id="forgot">Forgot your password ?</a> -->
             <input class="btn" type="submit" value="Sign in" />
         </form>
-=======
-        <form>
-          <div class="textbox">
-            <input type="text" placeholder="Username" name="" value="" />
-          </div>
-          <div class="textbox">
-            <input type="password" placeholder="Password" name="" value="" />
-          </div>
-        </form>
-        <a href="" id="forgot">Forgot your password ?</a>
-        <input class="btn" type="button" value="Sign in" />
->>>>>>> Stashed changes
       </section>
       <section class="minor">
         <h1>New here ?</h1>
