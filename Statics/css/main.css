@@ -216,7 +216,7 @@ body {
   padding: 0;
   background-color: #18191a;
   color: #fff;
-  font-family: San Francisco Text;
+  font-family: Google Sans;
   overflow-x: hidden;
 }
 
@@ -322,12 +322,19 @@ svg .opened .line2 {
 
 #signin {
   color: #fff;
-  width: 2.6rem;
+  width: 2.7rem;
+  height: 2.7rem;
   right: 20px;
+  border-radius: 50%;
 }
 
 #signin svg {
+  height: 2.5rem;
   width: 2.5rem;
+}
+
+#signin:hover {
+  background: rgba(225, 225, 225, 0.3);
 }
 
 .foot {

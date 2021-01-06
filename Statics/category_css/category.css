@@ -71,7 +71,7 @@ body {
   padding: 0;
   background-color: #18191a;
   color: #fff;
-  font-family: San Francisco Text;
+  font-family: Google Sans;
   overflow-x: hidden;
 }
 
@@ -177,12 +177,19 @@ svg .opened .line2 {
 
 #signin {
   color: #fff;
-  width: 2.6rem;
+  width: 2.7rem;
+  height: 2.7rem;
   right: 20px;
+  border-radius: 50%;
 }
 
 #signin svg {
+  height: 2.5rem;
   width: 2.5rem;
+}
+
+#signin:hover {
+  background: rgba(225, 225, 225, 0.3);
 }
 
 .purple {
@@ -219,12 +226,9 @@ svg .opened .line2 {
   color: #bac1c8;
 }
 
-.blog b {
-  font-size: 1.6rem;
-}
-
-.blog .headline {
-  margin-left: 2rem;
+.blog .headline, .blog h1 {
+  margin: 1rem 0;
+  text-align: center;
 }
 
 .wrapper {
@@ -249,8 +253,8 @@ svg .opened .line2 {
 }
 
 .card {
-  border-radius: 10px;
-  height: 80vh;
+  border-radius: 8px;
+  height: 70vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -307,6 +311,11 @@ svg .opened .line2 {
   height: 100%;
   z-index: 3;
   opacity: 0.6;
+}
+
+.card__desc h2 {
+  font-size: 2rem;
+  margin: 0.5rem 0;
 }
 
 .author {

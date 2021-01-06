@@ -23,9 +23,11 @@ from django.conf.urls.static import static, serve
 
 urlpatterns = [
     path('', views.index),
-    path('application/', views.application),
-    path('history/', views.history),
-    path('method/', views.method),
+    path('ungdung/', views.ungdung),
+    path('lichsu/', views.lichsu),
+    path('kythuat/', views.kythuat),
+    path('phanloai/', views.phanloai),
+    path('docthem/', views.docthem),
     path('signin/', views.signin),
     path('signup/', views.signup),
     path('signout/', views.signout),

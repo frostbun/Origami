@@ -13,14 +13,20 @@ from django.db.models import Model
 def index(request):
     return render(request, 'index.html')
 
-def history(request):
-    return render(request, 'history.html')
+def lichsu(request):
+    return render(request, 'lichsu.html')
 
-def application(request):
-    return render(request, 'application.html')
+def kythuat(request):
+    return render(request, 'kythuat.html')
 
-def method(request):
-    return render(request, 'method.html')
+def phanloai(request):
+    return render(request, 'phanloai.html')
+
+def ungdung(request):
+    return render(request, 'ungdung.html')
+
+def docthem(request):
+    return render(request, 'docthem.html')
 
 def signout(request):
     logout(request)
