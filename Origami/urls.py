@@ -22,17 +22,17 @@ from django.conf import settings
 from django.conf.urls.static import static, serve
 
 urlpatterns = [
-    path('', views.index),
-    path('ungdung/', views.ungdung),
-    path('lichsu/', views.lichsu),
-    path('kythuat/', views.kythuat),
-    path('phanloai/', views.phanloai),
-    path('docthem/', views.docthem),
-    path('signin/', views.signin),
-    path('signup/', views.signup),
-    path('signout/', views.signout),
-    path('blog/', views.blog),
-    path('profile/', views.profile),
-    path('admin/', admin.site.urls),
+    path('',                views.index),
+    path('ungdung/',        views.ungdung),
+    path('lichsu/',         views.lichsu),
+    path('kythuat/',        views.kythuat),
+    path('phanloai/',       views.phanloai),
+    path('docthem/',        views.docthem),
+    path('signin/',         views.signin),
+    path('signup/',         views.signup),
+    path('signout/',        views.signout),
+    path('blog/',           views.blog),
+    path('profile/',        views.profile),
+    path('admin/',          admin.site.urls),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
