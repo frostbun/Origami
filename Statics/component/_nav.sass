@@ -4,17 +4,19 @@ html
 body
   margin: 0
   padding: 0
-  background-color: #262626
+  background-color: #18191a
   color: #fff
-  font-family: Google Sans, Manrope
+  font-family: San Francisco Text
   overflow-x: hidden
   a
     text-decoration: none
     color: #fff
 nav
   width: 100%
+  position: fixed
   z-index: 9
   font-size: 14px
+  border-bottom: 1px solid #555
   top: 0
   input
     display: none
@@ -49,7 +51,7 @@ svg
     stroke-dashoffset: -30
     stroke-width: 6
 .nav
-  background: #2d2d2d
+  background: #242526
   height: 4rem
   padding: 0 2vw
   gap: 2rem
@@ -73,23 +75,11 @@ svg
       line-height: 2.5rem
       display: inline-block
       border-radius: 8px
-      // 
     a:hover
-      margin: 0 8px
-      border: 2px solid #aaa
+      color: #3498db
 #signin
   color: #fff
-  width: 2rem
+  width: 2.6rem
   right: 20px
   svg
     width: 2.5rem
-body::after
-  content: ' '
-  background: linear-gradient(transparent, #262626), url('../Image/crease2.png')
-  position: absolute
-  top: 0
-  left: 0
-  width: 100vw
-  height: 100vh
-  z-index: -99
-  opacity: 0.4

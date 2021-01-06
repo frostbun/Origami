@@ -69,9 +69,9 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background-color: #262626;
+  background-color: #18191a;
   color: #fff;
-  font-family: Google Sans, Manrope;
+  font-family: San Francisco Text;
   overflow-x: hidden;
 }
 
@@ -82,8 +82,10 @@ body a {
 
 nav {
   width: 100%;
+  position: fixed;
   z-index: 9;
   font-size: 14px;
+  border-bottom: 1px solid #555;
   top: 0;
 }
 
@@ -137,7 +139,7 @@ svg .opened .line2 {
 }
 
 .nav {
-  background: #2d2d2d;
+  background: #242526;
   height: 4rem;
   padding: 0 2vw;
   gap: 2rem;
@@ -170,31 +172,17 @@ svg .opened .line2 {
 }
 
 .nav_buttons a:hover {
-  margin: 0 8px;
-  border: 2px solid #aaa;
+  color: #3498db;
 }
 
 #signin {
   color: #fff;
-  width: 2rem;
+  width: 2.6rem;
   right: 20px;
 }
 
 #signin svg {
   width: 2.5rem;
-}
-
-body::after {
-  content: ' ';
-  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(#262626)), url("../Image/crease2.png");
-  background: linear-gradient(transparent, #262626), url("../Image/crease2.png");
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -99;
-  opacity: 0.4;
 }
 
 .purple {
@@ -262,7 +250,7 @@ body::after {
 
 .card {
   border-radius: 10px;
-  height: 90vh;
+  height: 80vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -306,11 +294,9 @@ body::after {
 }
 
 .card__desc p {
-  padding: 5px 10px;
-  border-radius: 15px;
+  padding: 5px 0;
   font-size: .8rem;
   display: inline-block;
-  background-color: rgba(225, 225, 225, 0.1);
   margin: 5px 0 -2px 0;
 }
 
@@ -370,11 +356,11 @@ body::after {
   width: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  border-radius: 2.25rem 2.25rem 0 0;
   height: 15rem;
   padding: 16px 4vw;
   display: block;
-  background: #404040;
+  background: #242526;
+  border-top: 1px solid #777;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -444,8 +430,8 @@ body::after {
     width: Min(300px, calc(100% - 100px));
     height: 100vh;
     min-width: 240px;
-    padding-top: 20vh;
-    background: #444;
+    padding-top: 10vh;
+    background: #1f5f8a;
     position: absolute;
     top: 0;
     left: -100vw;
@@ -459,14 +445,15 @@ body::after {
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
     gap: 1rem;
-    margin: 0 2rem;
+    margin: 0 1rem;
   }
   .nav_bg a {
     background: #232f3d;
-    line-height: 20vw;
+    line-height: 5rem;
     text-align: center;
     width: 100%;
     padding: 0;
+    margin: 0;
     border-radius: 1rem;
   }
   label {
