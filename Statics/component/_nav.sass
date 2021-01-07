@@ -70,21 +70,29 @@ svg
     transition: .2s ease-in-out
   &_buttons
     a
-      padding: 0 1rem
-      margin: 0 10px
-      line-height: 2.5rem
+      line-height: 4rem
       display: inline-block
       border-radius: 8px
-    a:hover
-      color: #3498db
+      width: 8rem
+      text-align: center
+      margin: 0
+    .line
+      height: 2px
+      width: calc(8rem)
+      background: #3498db
+      transition: .3s ease-in-out
+      position: fixed
+      top: 4rem
+      display: none
+@for $i from 1 to 6
+  .nav_bg a:nth-child(#{$i}):hover ~ .line
+    transform: translateX(calc(8rem * (#{$i} - 1)))
+    display: block
 #signin
   color: #fff
   width: 2.7rem
-  height: 2.7rem
   right: 20px
   border-radius: 50%
   svg
     height: 2.5rem
     width: 2.5rem
-  &:hover
-    background: rgba(225,225,225,0.3)

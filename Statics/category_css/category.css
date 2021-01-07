@@ -164,21 +164,58 @@ svg .opened .line2 {
 }
 
 .nav_buttons a {
-  padding: 0 1rem;
-  margin: 0 10px;
-  line-height: 2.5rem;
+  line-height: 4rem;
   display: inline-block;
   border-radius: 8px;
+  width: 8rem;
+  text-align: center;
+  margin: 0;
 }
 
-.nav_buttons a:hover {
-  color: #3498db;
+.nav_buttons .line {
+  height: 2px;
+  width: calc(8rem);
+  background: #3498db;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+  position: fixed;
+  top: 4rem;
+  display: none;
+}
+
+.nav_bg a:nth-child(1):hover ~ .line {
+  -webkit-transform: translateX(calc(8rem * (1 - 1)));
+          transform: translateX(calc(8rem * (1 - 1)));
+  display: block;
+}
+
+.nav_bg a:nth-child(2):hover ~ .line {
+  -webkit-transform: translateX(calc(8rem * (2 - 1)));
+          transform: translateX(calc(8rem * (2 - 1)));
+  display: block;
+}
+
+.nav_bg a:nth-child(3):hover ~ .line {
+  -webkit-transform: translateX(calc(8rem * (3 - 1)));
+          transform: translateX(calc(8rem * (3 - 1)));
+  display: block;
+}
+
+.nav_bg a:nth-child(4):hover ~ .line {
+  -webkit-transform: translateX(calc(8rem * (4 - 1)));
+          transform: translateX(calc(8rem * (4 - 1)));
+  display: block;
+}
+
+.nav_bg a:nth-child(5):hover ~ .line {
+  -webkit-transform: translateX(calc(8rem * (5 - 1)));
+          transform: translateX(calc(8rem * (5 - 1)));
+  display: block;
 }
 
 #signin {
   color: #fff;
   width: 2.7rem;
-  height: 2.7rem;
   right: 20px;
   border-radius: 50%;
 }
@@ -186,10 +223,6 @@ svg .opened .line2 {
 #signin svg {
   height: 2.5rem;
   width: 2.5rem;
-}
-
-#signin:hover {
-  background: rgba(225, 225, 225, 0.3);
 }
 
 .purple {

@@ -33,9 +33,6 @@ def signout(request):
     return HttpResponseRedirect('/')
 
 def signin(request):
-    if request.user.is_authenticated:
-        return HttpResponseRedirect('/profile')
-
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
