@@ -101,14 +101,14 @@ def blog(request):
 def profile(request):
     if request.method == 'POST':
         blog_form = UploadBlog(request.POST, request.FILES)
-        print(request.FILES)
+        # print(request.FILES)
 
         if blog_form.is_valid():
             blog = blog_form.save(commit=False)
             blog.user = request.user
             blog.save()
-        else:
-            print(blog_form.errors)
+        # else:
+        #     print(blog_form.errors)
 
     all_blog = UserBlog.objects.filter(user = request.user).order_by('date_posted').reverse
     return render(request, 'profile_sample.html', {'all_blog': all_blog,
