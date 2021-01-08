@@ -4,7 +4,7 @@ html
 body
   margin: 0
   padding: 0
-  background-color: #18191a
+  background-color: #202124
   color: #fff
   font-family: Google Sans
   overflow-x: hidden
@@ -16,7 +16,6 @@ nav
   position: fixed
   z-index: 9
   font-size: 14px
-  border-bottom: 1px solid #555
   top: 0
   input
     display: none
@@ -51,7 +50,7 @@ svg
     stroke-dashoffset: -30
     stroke-width: 6
 .nav
-  background: #242526
+  background: #323336
   height: 4rem
   padding: 0 2vw
   gap: 2rem
@@ -80,9 +79,9 @@ svg
       height: 2px
       width: calc(8rem)
       background: #3498db
-      transition: .3s ease-in-out
+      transition: .2s ease-in-out
       position: fixed
-      top: 4rem
+      top: calc(4rem - 3px)
       display: none
 @for $i from 1 to 6
   .nav_bg a:nth-child(#{$i}):hover ~ .line

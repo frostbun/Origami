@@ -1,3 +1,75 @@
+.head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 8rem 2rem 0 2rem;
+}
+
+.hello {
+  font-size: 4rem;
+}
+
+.cta {
+  font-size: 1.5rem;
+  line-height: 5rem;
+  border-radius: 2.5rem;
+  overflow: hidden;
+}
+
+.cta_a {
+  -webkit-transition: .2s linear;
+  transition: .2s linear;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100%;
+}
+
+.cta_a b {
+  opacity: 0;
+  margin-right: -12.4rem;
+  -webkit-transition: .2s linear;
+  transition: .2s linear;
+}
+
+.cta_a:hover {
+  background: #343537;
+}
+
+.cta_a:hover b {
+  opacity: 1;
+  margin-right: 0;
+  padding-left: 2rem;
+}
+
+.cta_a:hover svg {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.cta svg {
+  width: 4.5rem;
+  height: 4.5rem;
+  background: #343537;
+  border-radius: 50%;
+  -webkit-transition: .2s linear;
+  transition: .2s linear;
+}
+
 .hero {
   margin-top: 6rem;
   -ms-grid-columns: 50% 50%;
@@ -63,7 +135,7 @@
   padding: 1.5rem;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  border-radius: 8px;
+  border-radius: 29px;
 }
 
 .populars__headcard h1 {
@@ -80,7 +152,7 @@
   width: calc(100% + 10px);
   height: calc(100% + 10px);
   z-index: -1;
-  border-radius: 12px;
+  border-radius: 33px;
 }
 
 .populars__container .mini-card {
@@ -93,7 +165,7 @@
           justify-content: space-between;
   padding: 1.5rem;
   background: linear-gradient(85deg, #434343, #262626);
-  border-radius: 16px;
+  border-radius: 2rem;
   margin-left: -80px;
   -webkit-box-shadow: -2rem 0 3rem -2rem #000;
           box-shadow: -2rem 0 3rem -2rem #000;
@@ -214,7 +286,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background-color: #18191a;
+  background-color: #202124;
   color: #fff;
   font-family: Google Sans;
   overflow-x: hidden;
@@ -230,7 +302,6 @@ nav {
   position: fixed;
   z-index: 9;
   font-size: 14px;
-  border-bottom: 1px solid #555;
   top: 0;
 }
 
@@ -284,7 +355,7 @@ svg .opened .line2 {
 }
 
 .nav {
-  background: #242526;
+  background: #323336;
   height: 4rem;
   padding: 0 2vw;
   gap: 2rem;
@@ -321,10 +392,10 @@ svg .opened .line2 {
   height: 2px;
   width: calc(8rem);
   background: #3498db;
-  -webkit-transition: .3s ease-in-out;
-  transition: .3s ease-in-out;
+  -webkit-transition: .2s ease-in-out;
+  transition: .2s ease-in-out;
   position: fixed;
-  top: 4rem;
+  top: calc(4rem - 3px);
   display: none;
 }
 
@@ -377,14 +448,14 @@ svg .opened .line2 {
   height: 15rem;
   padding: 16px 4vw;
   display: block;
-  background: #242526;
-  border-top: 1px solid #777;
+  background: #323336;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  border-radius: 2rem 2rem 0 0;
 }
 
 .foot p {
