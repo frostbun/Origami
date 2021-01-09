@@ -7,10 +7,20 @@ body
   background-color: #202124
   color: #fff
   font-family: Google Sans, Manrope
+  background: radial-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('../Image/featured.jpg')
+  background-size: cover
+  background-position: center
   overflow-x: hidden
   a
     text-decoration: none
     color: #fff
+body::before
+  position: absolute
+  top: 0
+  left: 0
+  width: 100vw
+  height: auto
+  z-index: 99
 nav
   width: 100%
   position: fixed
