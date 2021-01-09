@@ -263,6 +263,67 @@ svg .opened .line2 {
   line-height: 2.1rem;
 }
 
+.comment-section {
+  margin: 4rem 2rem;
+}
+
+.comment-section h2 {
+  text-align: center;
+  font-size: 3rem;
+}
+
+.comment-section .cmt {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background: #555;
+  border-radius: 2rem;
+  padding: 2rem 2rem;
+}
+
+.comment-section .cmt .author {
+  padding-right: 1rem;
+  margin-right: 1rem;
+  border-right: 2px solid #333;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.comment-section .cmt .author img {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  margin: 0 1rem 0 0;
+}
+
+.comment-section .write__comment {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.comment-section .write__comment textarea {
+  resize: none;
+}
+
+.comment-section .write__comment textarea:focus {
+  outline: none;
+}
+
 .side__card {
   top: 5rem;
 }
