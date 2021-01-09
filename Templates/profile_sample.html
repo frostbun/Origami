@@ -22,7 +22,7 @@
             <form enctype="multipart/form-data", method="POST">
                 {% csrf_token %}
                 <textarea id="id_blog" name="blog" rows="10" cols="100" maxlength="1000000000" required></textarea>
-                <p>Choose cover: <input type="file" id="id_cover" name="cover"></p>
+                <p>Choose cover: <input type="file" accept="image/*" id="id_cover" name="cover"></p>
                 <p><input type="submit" class="btn btn-primary" value="Submit"></p>
             </form>
         </div>
