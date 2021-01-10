@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        {% if user.first_name %}
+            <title>{{ user.first_name }}'s profile</title>
+        {% else %}
+            <title>{{ user.username }}'s profile</title>
+        {% endif %}
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="{% static 'profile_css/profile.css' %}">
+    </head>
+    
+    <body>
+        <div class="header">
+            <div class="logo">
+                <a href="/">Origami</a>
+            </div>
+            <div class="check-page">
+                <!-- <a href="" style="background-color: aquamarine;">Profile</a> -->
+
+                <!-- <h2 style="display: inline; color:white">|</h2> -->
+                <a href="/signout">Đăng xuất</a>
+
+            </div>
+        </div>
+        <div class="user-box">
+            <h2>{{ user.username }}'s Profile</h2>
+            <div class="textbox">
+                {% if user_profile.pic %}
+                    <img src="../media/{{ user_profile.pic }}" alt="">
+                {% else %}
+                    <img src="{% static 'Image/blank_avt.jpg' %}" alt="">
+                {% endif %}
+            </div>
+            <form enctype="multipart/form-data", method="POST">
+                {% csrf_token %}
+                <input name="pic" type="file" accept="image/*" id="actual-btn" hidden/>
+                <label for="actual-btn">Chọn avatar</label>
+                <input type="submit" value="Đổi">
+            </form>
+            <div class="textbox">
+                <span class="user-info">Username:</span>
+                <p class="load-data">{{ user.username }}</p>
+            </div>
+            <div class="textbox">
+                <span class="user-info">Full name:</span>
+                <p class="load-data">{{ user.first_name }} {{ user.last_name }}</p>
+            </div>
+            <div class="textbox">
+                <span class="user-info">Email address:</span>
+                <p class="load-data">{{ user.email }}</p>
+            </div>
+            <!-- <div class="textbox">
+                <span class="user-info">Phone number:</span>
+                <p class="load-data">Phone number goes here</p>
+            </div> -->
+        
+        </div>
+    </body>
+</html>
