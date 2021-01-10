@@ -21,31 +21,26 @@
       <div class="head">
         <h1 class="hello">
           Welcome back,<br />
-          <b style="color: #3498db;">
-            {% if user.is_authenticated %}
-                {% if user.first_name %}
-                    {{ user.first_name }}
-                {% else %}
-                    {{ user.username }}
-                {% endif %}
-            {% else %}
-                Unknown User
-            {% endif %}
-          </b> !
+          <b style="color: #3498db">
+            {% if user.is_authenticated %} {% if user.first_name %} {{
+            user.first_name }} {% else %} {{ user.username }} {% endif %} {%
+            else %} Unknown User {% endif %}
+          </b>
+          !
         </h1>
-          <div class="cta">
-            <a href="" class="cta_a">
-              <b> Feel like writing ?</b>
-              <svg
+        <div class="cta">
+          <a href="" class="cta_a">
+            <b> Feel like writing ?</b>
+            <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
               height="16"
               fill="currentColor"
               class="bi bi-plus"
               viewBox="0 0 16 16"
-              >
+            >
               <path
-              d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
+                d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
               />
             </svg>
           </a>

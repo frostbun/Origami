@@ -1,0 +1,65 @@
+html
+  height: 100%
+  box-sizing: border-box
+body
+  transform: translateY(-2rem)
+  margin: 0
+  padding: 0
+  padding-top: 4rem
+  height: 100%
+  font-family: Google Sans
+  text-align: center
+  overflow-x: hidden
+  background: url('../Image/featured.jpg')
+  backdrop-filter: blur(20px)
+  color: white
+h1
+  font-size: 3rem
+input[type = "submit"], #id_cover
+  font-family: Google Sans !important
+textarea
+  width: 100%
+  height: 50vh
+  font-size: 1.3rem
+  font-family: Google Sans
+  &:focus
+    outline: none
+input[type="submit"]
+  line-height: 3rem
+  width: 7rem
+  background: #000
+  color: white
+  border: none
+  border-radius: 1rem
+  font-size: 1.3rem
+  cursor: pointer
+  transition: .1s linear
+  &:hover
+    background: #3498db
+    transform: translateY(-5px)
+    box-shadow: 0 5px 15px #000
+#signout
+  text-decoration: none
+  color: white
+  position: absolute
+  top: 3rem
+  left: 1rem
+  border-radius: 2rem
+  display: flex
+  align-items: center
+  line-height: 2rem
+  background: #333
+  padding: 1rem 2rem
+  svg
+    height: 2rem
+    width: auto
+    display: flex
+    align-items: center
+  i
+    opacity: 0
+    margin-right: -2rem
+    transition: .1s linear
+  &:hover
+    i
+      opacity: 1
+      margin-right: 0 !important
