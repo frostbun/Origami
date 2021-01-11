@@ -22,9 +22,15 @@
         <h1 class="hello">
           Welcome back,<br />
           <b style="color: #3498db">
-            {% if user.is_authenticated %} {% if user.first_name %} {{
-            user.first_name }} {% else %} {{ user.username }} {% endif %} {%
-            else %} Unknown User {% endif %}
+            {% if user.is_authenticated %} 
+              {% if user.first_name %} 
+                {{user.first_name }}
+              {% else %} 
+                {{ user.username }} 
+              {% endif %} 
+            {% else %} 
+              Unknown User 
+            {% endif %}
           </b>
           !
         </h1>

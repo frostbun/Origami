@@ -65,12 +65,12 @@ def signup(request):
         password = request.POST.get('password')
 
         if form.is_valid() and profile_form.is_valid():
-            # if len(password) < 8:
-            #     return render(request, 'signUp.html', {'error': 'Password must be longer than 8 characters!',
-            #                                             'username': username,
-            #                                             'email': email,
-            #                                             'first_name': first_name,
-            #                                             'last_name': last_name, })
+            if len(password) < 8:
+                return render(request, 'signUp.html', {'error': 'Password must be longer than 8 characters!',
+                                                        'username': username,
+                                                        'email': email,
+                                                        'first_name': first_name,
+                                                        'last_name': last_name, })
     
             user = form.save()
             user.set_password(user.password)
