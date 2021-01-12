@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="{% static 'blog_css/blog.css' %}" />
   </head>
   <body>
-    <nav w3-include-html="{% static 'HTML/nav.html' %}" class="po__fixed"></nav>
+    <nav w3-include-html="{% static 'HTML/nav.min.html' %}" class="po__fixed"></nav>
     <article class="content">
       <h1 style="font-size: 4rem">Lược sử Origami</h1>
       <div class="article borr-1">
@@ -92,6 +92,31 @@
         </span>
       </div>
     </article>
+    <section class="comment-section">
+      <h2>Comments</h2>
+      <article class="cmt">
+        <div class="author">
+          <img src="../static/Image/hung.jpg" alt="" />
+          <p>Anonymous</p>
+        </div>
+        <div class="cmt__content">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
+          amet, commodi omnis corporis maxime laudantium eaque accusantium
+          veniam hic beatae. Lorem ipsum dolor sit amet, consectetur adipisicing
+          elit. Cupiditate animi reiciendis at modi veritatis possimus
+          doloremque quia assumenda quis neque, quibusdam hic tempora esse optio
+          dolorum totam unde iste soluta!
+          
+        </div>
+      </article>
+      <section class="write__comment">
+        <h2>Leave a comment</h2>
+        <textarea id="w3review" name="w3review" rows="10" columns="50 ">
+          </textarea
+        >
+        <input type="submit" value="Post comment" >
+      </section>
+    </section>
     <footer
       w3-include-html="{% static 'HTML/footer.html' %}"
       class="foot"

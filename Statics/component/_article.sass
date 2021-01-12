@@ -44,22 +44,25 @@ $gradient: linear-gradient(130deg,#ff7a18,#af002d 41.07%,#319197 76.05%)
     flex-direction: column
     textarea
       resize: none
+      border-radius: 15px
+      font-size: 1.3rem
       &:focus
         outline: none
-.side
-  &__card
-    top: 5rem
-    &__content
-      background: #000
-      padding: 1rem
+    input[type = "submit"]
+      display: block
+      width: 10rem
+      border: none
+      cursor: pointer
+      font-family: Google Sans
+      font-weight: 700
+      background: #333
+      color: white
+      line-height: 4rem
+      margin-top: 1rem
       border-radius: 1rem
-  &__card::after
-    content: ' '
-    position: absolute
-    top: -3px
-    left: -3px
-    height: calc(100% + 6px)
-    width: calc(100% + 6px)
-    background: $gradient
-    z-index: -5
-    border-radius: 1rem 
+      transition: .1s linear
+      &:hover
+        background: #3498db
+        color: #222222
+        transform: translateY(-5px)
+        box-shadow: 0 10px 1rem #000

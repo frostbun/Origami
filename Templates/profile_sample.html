@@ -1,40 +1,50 @@
 <!DOCTYPE html>
 {% load static %}
 <head>
-    {% if user.first_name %}
-        <title>{{ user.first_name }}'s profile</title>
-    {% else %}
-        <title>{{ user.username }}'s profile</title>
-    {% endif %}
-    <link
-        rel="stylesheet"
-        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-        crossorigin="anonymous"
+  {% if user.first_name %}
+  <title>{{ user.first_name }}'s profile</title>
+  {% else %}
+  <title>{{ user.username }}'s profile</title>
+  {% endif %}
+  <link rel="stylesheet" href="../static/profile/profile.css" />
+</head>
+<body>
+  <div class="container">
+    <a href="/signout" id="signout">
+      <i>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-chevron-double-left"
+          viewBox="0 0 16 16"
         >
-    </head>
-    <body>
-        <div class="container">
-            <a href="/signout">Đăng xuất</a>
-            <div class="jumbotron">
-                <h1>Post something</h1>
-            </div>
-            <form enctype="multipart/form-data", method="POST">
-                {% csrf_token %}
-                <textarea id="id_blog" name="blog" rows="10" cols="100" maxlength="1000000000" required></textarea>
-                <p>Choose cover: <input type="file" accept="image/*" id="id_cover" name="cover"></p>
-                <p><input type="submit" class="btn btn-primary" value="Submit"></p>
-            </form>
-        </div>
-
-        {% for blog in all_blog %}
-            <div class="container" style="border: 2px solid rgb(114, 51, 51);">
-                {% if blog.cover %}
-                    <img src="../media/{{ blog.cover }}" width="1000">
-                {% endif %}
-                <p>Date posted: {{ blog.date_posted }}</p>
-                <p>{{ blog.blog|linebreaks }}</p>
-            </div>
-        {% endfor %}
-
+          <path
+            fill-rule="evenodd"
+            d="M8.354 1.646a.5.5 0 0 1 0 .708L2.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+          />
+          <path
+            fill-rule="evenodd"
+            d="M12.354 1.646a.5.5 0 0 1 0 .708L6.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+          />
+        </svg>
+      </i>
+      Đăng xuất</a
+    >
+    <h1>Post something</h1>
+    <form enctype="multipart/form-data" , method="POST">
+      {% csrf_token %}
+      <textarea
+        id="id_blog"
+        name="blog"
+        rows="10"
+        cols="100"
+        maxlength="1000000000"
+        required
+      ></textarea>
+      <p>Choose cover: <input type="file" id="id_cover" name="cover" /></p>
+      <p><input type="submit" class="btn btn-primary" value="Submit" /></p>
+    </form>
+  </div>
 </body>
