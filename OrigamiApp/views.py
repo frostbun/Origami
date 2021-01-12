@@ -3,8 +3,9 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 
-from OrigamiApp.forms import UserSignUp, UserProfileSignUp, UploadBlog
-from OrigamiApp.models import UserProfile, UserBlog
+from . import forms
+from OrigamiApp.forms import UserSignUp, UserProfileSignUp, UploadBlog, UploadCmt
+from OrigamiApp.models import UserProfile, UserBlog, Comment
 from django.contrib.auth.models import User
 from django.db.models import Model
 
@@ -12,9 +13,21 @@ from django.db.models import Model
 
 def index(request):
     return render(request, 'index.html')
-
+    
+@login_required
 def lichsu(request):
-    return render(request, 'lichsu.html')
+    if request.method == 'POST':
+        cmt_form = UploadCmt(request.POST, request.FILES)
+        if cmt_form.is_valid():
+            cmt = cmt_form.save(commit=False)
+            cmt.user = request.user
+            cmt.save()
+
+    all_comment = Comment.objects.filter(user = request.user).order_by('date').reverse
+
+    return render(request, 'lichsu.html', {'all_comment': all_comment,
+                                            'form':UploadCmt})
+
 
 def kythuat(request):
     return render(request, 'kythuat.html')

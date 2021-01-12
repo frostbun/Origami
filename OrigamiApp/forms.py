@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User
-from OrigamiApp.models import UserProfile, UserBlog
+from OrigamiApp.models import UserProfile, UserBlog, Comment
 
 class UserSignUp(forms.ModelForm):
     class Meta():
@@ -16,3 +16,8 @@ class UploadBlog(forms.ModelForm):
     class Meta():
         model = UserBlog
         fields = ['blog', 'cover']
+
+class UploadCmt(forms.ModelForm):
+    class Meta():
+        model = Comment
+        fields = ['body']
