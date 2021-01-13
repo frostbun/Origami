@@ -22,8 +22,9 @@ def lichsu(request):
             cmt = cmt_form.save(commit=False)
             cmt.user = request.user
             cmt.save()
+            return HttpResponseRedirect(request.path)
 
-    all_comment = Comment.objects.filter(user = request.user).order_by('date').reverse
+    all_comment = Comment.objects.filter().order_by('date').reverse
 
     return render(request, 'lichsu.html', {'all_comment': all_comment,
                                             'form':UploadCmt})

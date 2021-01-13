@@ -20,6 +20,6 @@ class UserBlog(models.Model):
         return self.user.username + '\'s blog'
 
 class Comment(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="cmts")
     body = models.TextField()
     date = models.DateTimeField(auto_now_add=True)
