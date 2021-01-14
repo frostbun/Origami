@@ -42,7 +42,7 @@ svg
   width: 2.5rem
   .line
     fill: none
-    stroke: #4ccb70
+    stroke: #3498db
     stroke-width: 6
     transition: stroke-dasharray 200ms cubic-bezier(0.4, 0, 0.2, 1), stroke-dashoffset 400ms cubic-bezier(0.4, 0, 0.2, 1)
   .line1, .line3
@@ -81,11 +81,10 @@ svg
     a
       line-height: 4rem
       display: inline-block
-      border-radius: 8px
       width: 8rem
       text-align: center
       margin: 0
-    .line
+    .underline
       height: 2px
       width: calc(8rem)
       background: #3498db
@@ -94,7 +93,7 @@ svg
       top: calc(4rem - 3px)
       display: none
 @for $i from 1 to 6
-  .nav_bg a:nth-child(#{$i}):hover ~ .line
+  .nav_bg a:nth-child(#{$i}):hover ~ .underline
     transform: translateX(calc(8rem * (#{$i} - 1)))
     display: block
 #signin

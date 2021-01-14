@@ -69,7 +69,7 @@ body {
 
 .cta {
   position: absolute;
-  right: calc(28.78% - 12rem);
+  right: calc(28.78% - 10rem);
   bottom: 12%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -78,7 +78,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   color: white;
-  width: 12rem;
+  width: 10rem;
   padding: 10px;
   cursor: pointer;
   -webkit-transition: .2s ease-in;
@@ -118,7 +118,7 @@ body {
 
 .cta_a:hover {
   background: #3498db;
-  width: 10rem;
+  width: 12rem;
 }
 
 .cta_a:hover b {

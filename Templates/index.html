@@ -7,6 +7,12 @@
     <title>Origami</title>
     <link rel="stylesheet" href="{% static 'css/main.css' %}" />
     <link
+      rel="icon"
+      href="static/Image/origami.png"
+      type="image/gif"
+      sizes="16x16"
+    />
+    <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;800&display=swap"
     />
@@ -17,19 +23,19 @@
       id="nav"
       class="po__fixed"
     ></nav>
-    <div id="web__content">
+    <div id="web__content"> 
       <div class="head">
         <h1 class="hello">
-          Welcome back,<br />
+          Chào mừng,<br />
           <b style="color: #3498db">
             {% if user.is_authenticated %} 
-              {% if user.first_name %} 
-                {{user.first_name }}
+              {% if user.first_name %}
+                {{user.first_name }} 
               {% else %} 
                 {{ user.username }} 
               {% endif %} 
             {% else %} 
-              Unknown User 
+                Người dùng mới
             {% endif %}
           </b>
           !
@@ -42,7 +48,6 @@
               width="16"
               height="16"
               fill="currentColor"
-              class="bi bi-plus"
               viewBox="0 0 16 16"
             >
               <path
@@ -58,7 +63,7 @@
         </a>
         <figcaption class="d__f fd__cl">
           <p class="d__ib borr-1">31/12/2020, 07:24</p>
-          <a href="/ungdung"><h1>Ứng dụng Origami</h1></a>
+          <a href="/ungdung"><h1 style="color: #222;">Chào mừng</h1></a>
           <span
             >Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa,
             error! Fuga voluptas accusamus quaerat vitae recusandae quae iusto
@@ -70,7 +75,7 @@
     </div>
     <div class="populars d__f">
       <header class="populars__headcard d__f fd__cl jc__fe po__re">
-        <h1>Popular this month</h1>
+        <h1>Phổ biến gần đây</h1>
       </header>
       <div class="populars__container d__f">
         <article class="mini-card d__f fd__cl">

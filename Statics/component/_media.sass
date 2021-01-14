@@ -1,4 +1,6 @@
 @media only screen and (max-width: 1200px)
+  .underline
+    opacity: 0
   #logo
     line-height: 4rem
     display: inline-block
@@ -14,7 +16,7 @@
       height: 100vh
       min-width: 240px
       padding-top: 10vh
-      background: #1f5f8a
+      background: #222
       // 
       position: absolute
       top: 0
@@ -23,18 +25,17 @@
       transition: .2s ease-in-out
     &_bg
       display: grid
-      grid-template-columns: 1fr 1fr
+      grid-template-columns: 1fr 
       gap: 1rem
       // 
       margin: 0 1rem
       a
-        background: #232f3d
+        background: #555
         line-height: 5rem
         text-align: center
         width: 100%
-        padding: 0 
+        padding: 0
         margin: 0
-        border-radius: 1rem
   label
     opacity: 1 !important
   input:checked ~ .nav
@@ -45,7 +46,7 @@
   .mini-card
     flex: 0 0 200px !important
   .mini-card:hover
-    transform: translateY(-7px) !important
+    transform: translateY(-7px) 
 @media only screen and (max-width: 800px)
   .wrapper
     display: block !important
@@ -65,6 +66,8 @@
       padding: 18px
   .populars
     overflow-x: scroll
+@media (min-width: 400px) and (max-width: 720px)
+  a
 @media only screen and (max-width: 640px)
   #contact__desc
     display: none !important
@@ -72,7 +75,6 @@
   .wrapper
     padding: 2px
   .card__container
-    grid-template-columns: repeat()
     a
       width: 90vw !important
       flex-direction: column-reverse

@@ -121,7 +121,7 @@ svg {
 
 svg .line {
   fill: none;
-  stroke: #4ccb70;
+  stroke: #3498db;
   stroke-width: 6;
   -webkit-transition: stroke-dasharray 200ms cubic-bezier(0.4, 0, 0.2, 1), stroke-dashoffset 400ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: stroke-dasharray 200ms cubic-bezier(0.4, 0, 0.2, 1), stroke-dashoffset 400ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -177,13 +177,12 @@ svg .opened .line2 {
 .nav_buttons a {
   line-height: 4rem;
   display: inline-block;
-  border-radius: 8px;
   width: 8rem;
   text-align: center;
   margin: 0;
 }
 
-.nav_buttons .line {
+.nav_buttons .underline {
   height: 2px;
   width: calc(8rem);
   background: #3498db;
@@ -194,31 +193,31 @@ svg .opened .line2 {
   display: none;
 }
 
-.nav_bg a:nth-child(1):hover ~ .line {
+.nav_bg a:nth-child(1):hover ~ .underline {
   -webkit-transform: translateX(calc(8rem * (1 - 1)));
           transform: translateX(calc(8rem * (1 - 1)));
   display: block;
 }
 
-.nav_bg a:nth-child(2):hover ~ .line {
+.nav_bg a:nth-child(2):hover ~ .underline {
   -webkit-transform: translateX(calc(8rem * (2 - 1)));
           transform: translateX(calc(8rem * (2 - 1)));
   display: block;
 }
 
-.nav_bg a:nth-child(3):hover ~ .line {
+.nav_bg a:nth-child(3):hover ~ .underline {
   -webkit-transform: translateX(calc(8rem * (3 - 1)));
           transform: translateX(calc(8rem * (3 - 1)));
   display: block;
 }
 
-.nav_bg a:nth-child(4):hover ~ .line {
+.nav_bg a:nth-child(4):hover ~ .underline {
   -webkit-transform: translateX(calc(8rem * (4 - 1)));
           transform: translateX(calc(8rem * (4 - 1)));
   display: block;
 }
 
-.nav_bg a:nth-child(5):hover ~ .line {
+.nav_bg a:nth-child(5):hover ~ .underline {
   -webkit-transform: translateX(calc(8rem * (5 - 1)));
           transform: translateX(calc(8rem * (5 - 1)));
   display: block;
@@ -319,7 +318,8 @@ svg .opened .line2 {
 .comment-section .write__comment textarea {
   resize: none;
   border-radius: 15px;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
+  padding: 1rem;
 }
 
 .comment-section .write__comment textarea:focus {
@@ -414,6 +414,9 @@ svg .opened .line2 {
 }
 
 @media only screen and (max-width: 1200px) {
+  .underline {
+    opacity: 0;
+  }
   #logo {
     line-height: 4rem;
     display: inline-block;
@@ -430,7 +433,7 @@ svg .opened .line2 {
     height: 100vh;
     min-width: 240px;
     padding-top: 10vh;
-    background: #1f5f8a;
+    background: #222;
     position: absolute;
     top: 0;
     left: -100vw;
@@ -441,19 +444,18 @@ svg .opened .line2 {
   .nav_bg {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
     gap: 1rem;
     margin: 0 1rem;
   }
   .nav_bg a {
-    background: #232f3d;
+    background: #555;
     line-height: 5rem;
     text-align: center;
     width: 100%;
     padding: 0;
     margin: 0;
-    border-radius: 1rem;
   }
   label {
     opacity: 1 !important;
@@ -468,8 +470,8 @@ svg .opened .line2 {
             flex: 0 0 200px !important;
   }
   .mini-card:hover {
-    -webkit-transform: translateY(-7px) !important;
-            transform: translateY(-7px) !important;
+    -webkit-transform: translateY(-7px);
+            transform: translateY(-7px);
   }
 }
 
@@ -510,10 +512,6 @@ svg .opened .line2 {
 @media only screen and (max-width: 500px) {
   .wrapper {
     padding: 2px;
-  }
-  .card__container {
-    -ms-grid-columns: repeat();
-        grid-template-columns: repeat();
   }
   .card__container a {
     width: 90vw !important;

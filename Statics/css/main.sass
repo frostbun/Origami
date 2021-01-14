@@ -1,8 +1,7 @@
 $gradient: linear-gradient(130deg,#ff7a18,#af002d 41.07%,#319197 76.05%)
 .head
-  display: flex
-  flex-wrap: wrap
-  justify-content: space-between
+  display: grid
+  grid-template-columns: repeat(auto-fit, minmax(300px,1fr))
   align-items: center
   margin: 8rem 2rem 0 2rem
 .hello
@@ -10,9 +9,12 @@ $gradient: linear-gradient(130deg,#ff7a18,#af002d 41.07%,#319197 76.05%)
 .cta
   font-size: 1.5rem
   line-height: 5rem
-  border-radius: 2.5rem
   overflow: hidden
+  display: flex
+  flex-direction: row-reverse
   &_a
+    border-radius: 2.5rem
+    width: 20rem
     transition: .2s linear
     display: flex
     align-items: center
@@ -39,8 +41,8 @@ $gradient: linear-gradient(130deg,#ff7a18,#af002d 41.07%,#319197 76.05%)
 .hero
   margin-top: 6rem
   grid-template-columns: 50% 50%
-  background: #444
-  color: #eee
+  background: #eee
+  color: #222
   font-size: 1.2rem
   overflow: hidden
   &__img
@@ -56,7 +58,7 @@ $gradient: linear-gradient(130deg,#ff7a18,#af002d 41.07%,#319197 76.05%)
     height: 100%
     top: 0
     width: 65%
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0), #444 55%)
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0), #eee 55%)
   p
     padding: 5px 10px
     font-size: 12px
@@ -82,7 +84,7 @@ $gradient: linear-gradient(130deg,#ff7a18,#af002d 41.07%,#319197 76.05%)
     box-sizing: border-box
     border-radius: 29px
     h1
-      line-height: 1
+      line-height: 1.2
       font-size: clamp(1.8rem,calc(1.8rem + .2vw),3rem)
   &__headcard::before
     content: ""

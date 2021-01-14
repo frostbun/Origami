@@ -1,12 +1,8 @@
 .head {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -20,11 +16,19 @@
 .cta {
   font-size: 1.5rem;
   line-height: 5rem;
-  border-radius: 2.5rem;
   overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
 }
 
 .cta_a {
+  border-radius: 2.5rem;
+  width: 20rem;
   -webkit-transition: .2s linear;
   transition: .2s linear;
   display: -webkit-box;
@@ -74,8 +78,8 @@
   margin-top: 6rem;
   -ms-grid-columns: 50% 50%;
       grid-template-columns: 50% 50%;
-  background: #444;
-  color: #eee;
+  background: #eee;
+  color: #222;
   font-size: 1.2rem;
   overflow: hidden;
 }
@@ -98,8 +102,8 @@
   height: 100%;
   top: 0;
   width: 65%;
-  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0)), color-stop(55%, #444));
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0), #444 55%);
+  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0)), color-stop(55%, #eee));
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0), #eee 55%);
 }
 
 .hero p {
@@ -139,7 +143,7 @@
 }
 
 .populars__headcard h1 {
-  line-height: 1;
+  line-height: 1.2;
   font-size: clamp(1.8rem, calc(1.8rem + .2vw), 3rem);
 }
 
@@ -338,7 +342,7 @@ svg {
 
 svg .line {
   fill: none;
-  stroke: #4ccb70;
+  stroke: #3498db;
   stroke-width: 6;
   -webkit-transition: stroke-dasharray 200ms cubic-bezier(0.4, 0, 0.2, 1), stroke-dashoffset 400ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: stroke-dasharray 200ms cubic-bezier(0.4, 0, 0.2, 1), stroke-dashoffset 400ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -394,13 +398,12 @@ svg .opened .line2 {
 .nav_buttons a {
   line-height: 4rem;
   display: inline-block;
-  border-radius: 8px;
   width: 8rem;
   text-align: center;
   margin: 0;
 }
 
-.nav_buttons .line {
+.nav_buttons .underline {
   height: 2px;
   width: calc(8rem);
   background: #3498db;
@@ -411,31 +414,31 @@ svg .opened .line2 {
   display: none;
 }
 
-.nav_bg a:nth-child(1):hover ~ .line {
+.nav_bg a:nth-child(1):hover ~ .underline {
   -webkit-transform: translateX(calc(8rem * (1 - 1)));
           transform: translateX(calc(8rem * (1 - 1)));
   display: block;
 }
 
-.nav_bg a:nth-child(2):hover ~ .line {
+.nav_bg a:nth-child(2):hover ~ .underline {
   -webkit-transform: translateX(calc(8rem * (2 - 1)));
           transform: translateX(calc(8rem * (2 - 1)));
   display: block;
 }
 
-.nav_bg a:nth-child(3):hover ~ .line {
+.nav_bg a:nth-child(3):hover ~ .underline {
   -webkit-transform: translateX(calc(8rem * (3 - 1)));
           transform: translateX(calc(8rem * (3 - 1)));
   display: block;
 }
 
-.nav_bg a:nth-child(4):hover ~ .line {
+.nav_bg a:nth-child(4):hover ~ .underline {
   -webkit-transform: translateX(calc(8rem * (4 - 1)));
           transform: translateX(calc(8rem * (4 - 1)));
   display: block;
 }
 
-.nav_bg a:nth-child(5):hover ~ .line {
+.nav_bg a:nth-child(5):hover ~ .underline {
   -webkit-transform: translateX(calc(8rem * (5 - 1)));
           transform: translateX(calc(8rem * (5 - 1)));
   display: block;
@@ -516,6 +519,9 @@ svg .opened .line2 {
 }
 
 @media only screen and (max-width: 1200px) {
+  .underline {
+    opacity: 0;
+  }
   #logo {
     line-height: 4rem;
     display: inline-block;
@@ -532,7 +538,7 @@ svg .opened .line2 {
     height: 100vh;
     min-width: 240px;
     padding-top: 10vh;
-    background: #1f5f8a;
+    background: #222;
     position: absolute;
     top: 0;
     left: -100vw;
@@ -543,19 +549,18 @@ svg .opened .line2 {
   .nav_bg {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
     gap: 1rem;
     margin: 0 1rem;
   }
   .nav_bg a {
-    background: #232f3d;
+    background: #555;
     line-height: 5rem;
     text-align: center;
     width: 100%;
     padding: 0;
     margin: 0;
-    border-radius: 1rem;
   }
   label {
     opacity: 1 !important;
@@ -570,8 +575,8 @@ svg .opened .line2 {
             flex: 0 0 200px !important;
   }
   .mini-card:hover {
-    -webkit-transform: translateY(-7px) !important;
-            transform: translateY(-7px) !important;
+    -webkit-transform: translateY(-7px);
+            transform: translateY(-7px);
   }
 }
 
@@ -612,10 +617,6 @@ svg .opened .line2 {
 @media only screen and (max-width: 500px) {
   .wrapper {
     padding: 2px;
-  }
-  .card__container {
-    -ms-grid-columns: repeat();
-        grid-template-columns: repeat();
   }
   .card__container a {
     width: 90vw !important;
