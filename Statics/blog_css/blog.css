@@ -287,6 +287,7 @@ body {
   background: #555;
   border-radius: 2rem;
   padding: 2rem 2rem;
+  margin: 2rem 0;
 }
 
 .comment-section .cmt .author {
