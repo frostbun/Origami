@@ -9,8 +9,13 @@
     {% endif %}
     <meta charset="utf-8" />
     <link rel="stylesheet" href="{% static 'profile_css/profile.css' %}" />
+    <link
+      rel="shortcut icon"
+      href="/static/Image/origami.png"
+      type="image/x-icon"
+      sizes="48x48"
+    />    
   </head>
-
   <body>
     <div class="header">
       <div class="logo">
@@ -50,7 +55,7 @@
           </label>
         </div>
         <h2>{{ user.username }}'s Profile</h2>
-        <form enctype="multipart/form-data" , method="POST" id="form" >
+        <form enctype="multipart/form-data" , method="POST" id="form">
           {% csrf_token %}
           <input
             name="pic"
@@ -60,7 +65,7 @@
             required
             hidden
           />
-          <input type="submit" value="Đổi" style="display: none;"/>
+          <input type="submit" value="Đổi" style="display: none" />
         </form>
       </section>
       <section class="user-box__info">
