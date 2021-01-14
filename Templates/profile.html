@@ -50,7 +50,7 @@
           </label>
         </div>
         <h2>{{ user.username }}'s Profile</h2>
-        <form enctype="multipart/form-data" , method="POST">
+        <form enctype="multipart/form-data" , method="POST" id="form" >
           {% csrf_token %}
           <input
             name="pic"
@@ -60,7 +60,7 @@
             required
             hidden
           />
-          <input type="submit" value="Đổi" />
+          <input type="submit" value="Đổi" style="display: none;"/>
         </form>
       </section>
       <section class="user-box__info">
@@ -85,5 +85,10 @@
         </section>
       </section>
     </div>
+    <script>
+      document.getElementById("actual-btn").onchange = function () {
+        document.getElementById("form").submit();
+      };
+    </script>
   </body>
 </html>

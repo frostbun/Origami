@@ -137,13 +137,13 @@ svg .line2 {
   stroke-width: 6;
 }
 
-svg .opened .line1, svg .opened .line3 {
+.opened .line1, .opened .line3 {
   stroke-dasharray: 90 207;
   stroke-dashoffset: -134;
   stroke-width: 6;
 }
 
-svg .opened .line2 {
+.opened .line2 {
   stroke-dasharray: 1 60;
   stroke-dashoffset: -30;
   stroke-width: 6;
@@ -373,12 +373,17 @@ body {
   border-radius: 2rem 2rem 0 0;
 }
 
+.foot a {
+  padding: 0 8px;
+  height: 10vw;
+  margin: 0 -5px;
+}
+
 .foot p {
   margin: 10px 0;
 }
 
 .foot .icon {
-  margin: 0 3px;
   width: 10vw;
   max-width: 50px;
   height: 10vw;
@@ -434,8 +439,8 @@ body {
   }
   .nav_buttons {
     opacity: 0;
-    width: Min(300px, calc(100% - 100px));
-    height: 100vh;
+    width: Min(350px, calc(100% - 100px));
+    height: 104vh;
     min-width: 240px;
     padding-top: 10vh;
     background: #222;
@@ -458,9 +463,8 @@ body {
     background: #555;
     line-height: 5rem;
     text-align: center;
+    border-radius: 1rem;
     width: 100%;
-    padding: 0;
-    margin: 0;
   }
   label {
     opacity: 1 !important;
