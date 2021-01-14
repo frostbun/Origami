@@ -103,10 +103,10 @@
     </article>
     <section class="comment-section">
       <h2>Bình luận</h2>
-      {% for cmt in all_comment %}
+      {% for cmt in post_cmt %}
       <article class="cmt">
         <div class="author">
-          <p>{{cmt.user}}</p>
+          <h4>{{cmt.user}}</h4>
           <h5><p>{{cmt.date}}</p></h5>
         </div>
         <div class="cmt__content">{{cmt.body|linebreaks}}</div>
@@ -117,7 +117,7 @@
           {% csrf_token %}
           <h2><label>Bình luận tại đây nè :3</label></h2>
           {{form.body}}
-          <br />
+          <br/>
           <input type="submit" value="Bình luận" />
         </form>
       </div>

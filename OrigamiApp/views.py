@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
@@ -13,63 +13,69 @@ from django.db.models import Model
 
 def index(request):
     return render(request, 'index.html')
-    
-@login_required
+
+@login_required    
 def lichsu(request):
     if request.method == 'POST':
-        cmt_form = UploadCmt(request.POST, request.FILES)
+        cmt_form = UploadCmt(request.POST)
         if cmt_form.is_valid():
             cmt = cmt_form.save(commit=False)
+            cmt.trang = "lichsu"
             cmt.user = request.user
             cmt.save()
-            return HttpResponseRedirect(request.path)
+        return HttpResponseRedirect(request.path)
 
-    all_comment = Comment.objects.all().order_by('date').reverse
+    post_cmt = Comment.objects.filter(trang = "lichsu").order_by('date').reverse
 
-    return render(request, 'lichsu.html', {'all_comment': all_comment,
+    return render(request, 'lichsu.html', {'post_cmt': post_cmt,
                                             'form':UploadCmt})
 
-
+@login_required
 def kythuat(request):
     if request.method == 'POST':
-        cmt_form = UploadCmt(request.POST, request.FILES)
+        cmt_form = UploadCmt(request.POST)
         if cmt_form.is_valid():
             cmt = cmt_form.save(commit=False)
+            cmt.trang = "kythuat"
             cmt.user = request.user
             cmt.save()
-            return HttpResponseRedirect(request.path)
+        return HttpResponseRedirect(request.path)
 
-    all_comment = Comment.objects.all().order_by('date').reverse
+    post_cmt = Comment.objects.filter(trang = "kythuat").order_by('date').reverse
 
-    return render(request, 'kythuat.html', {'all_comment': all_comment,
+    return render(request, 'lichsu.html', {'post_cmt': post_cmt,
                                             'form':UploadCmt})
 
+@login_required
 def phanloai(request):
     if request.method == 'POST':
-        cmt_form = UploadCmt(request.POST, request.FILES)
+        cmt_form = UploadCmt(request.POST)
         if cmt_form.is_valid():
             cmt = cmt_form.save(commit=False)
+            cmt.trang = "phanloai"
             cmt.user = request.user
             cmt.save()
-            return HttpResponseRedirect(request.path)
+        return HttpResponseRedirect(request.path)
 
-    all_comment = Comment.objects.all().order_by('date').reverse
+    post_cmt = Comment.objects.filter(trang = "phanloai").order_by('date').reverse
 
-    return render(request, 'phanloai.html', {'all_comment': all_comment,
+    return render(request, 'lichsu.html', {'post_cmt': post_cmt,
                                             'form':UploadCmt})
 
+@login_required
 def ungdung(request):
     if request.method == 'POST':
-        cmt_form = UploadCmt(request.POST, request.FILES)
+        cmt_form = UploadCmt(request.POST)
         if cmt_form.is_valid():
             cmt = cmt_form.save(commit=False)
+            cmt.trang = "ungdung"
             cmt.user = request.user
             cmt.save()
-            return HttpResponseRedirect(request.path)
+        return HttpResponseRedirect(request.path)
 
-    all_comment = Comment.objects.all().order_by('date').reverse
+    post_cmt = Comment.objects.filter(trang = "ungdung").order_by('date').reverse
 
-    return render(request, 'ungdung.html', {'all_comment': all_comment,
+    return render(request, 'lichsu.html', {'post_cmt': post_cmt,
                                             'form':UploadCmt})
 
 def docthem(request):
