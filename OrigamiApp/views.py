@@ -31,13 +31,46 @@ def lichsu(request):
 
 
 def kythuat(request):
-    return render(request, 'kythuat.html')
+    if request.method == 'POST':
+        cmt_form = UploadCmt(request.POST, request.FILES)
+        if cmt_form.is_valid():
+            cmt = cmt_form.save(commit=False)
+            cmt.user = request.user
+            cmt.save()
+            return HttpResponseRedirect(request.path)
+
+    all_comment = Comment.objects.all().order_by('date').reverse
+
+    return render(request, 'kythuat.html', {'all_comment': all_comment,
+                                            'form':UploadCmt})
 
 def phanloai(request):
-    return render(request, 'phanloai.html')
+    if request.method == 'POST':
+        cmt_form = UploadCmt(request.POST, request.FILES)
+        if cmt_form.is_valid():
+            cmt = cmt_form.save(commit=False)
+            cmt.user = request.user
+            cmt.save()
+            return HttpResponseRedirect(request.path)
+
+    all_comment = Comment.objects.all().order_by('date').reverse
+
+    return render(request, 'phanloai.html', {'all_comment': all_comment,
+                                            'form':UploadCmt})
 
 def ungdung(request):
-    return render(request, 'ungdung.html')
+    if request.method == 'POST':
+        cmt_form = UploadCmt(request.POST, request.FILES)
+        if cmt_form.is_valid():
+            cmt = cmt_form.save(commit=False)
+            cmt.user = request.user
+            cmt.save()
+            return HttpResponseRedirect(request.path)
+
+    all_comment = Comment.objects.all().order_by('date').reverse
+
+    return render(request, 'ungdung.html', {'all_comment': all_comment,
+                                            'form':UploadCmt})
 
 def docthem(request):
     return render(request, 'docthem.html')

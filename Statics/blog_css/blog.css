@@ -169,7 +169,6 @@ svg .opened .line2 {
 
 .nav #logo__disappear {
   display: inline;
-  margin: 0 2px;
   -webkit-transition: .2s ease-in-out;
   transition: .2s ease-in-out;
 }
@@ -235,6 +234,10 @@ svg .opened .line2 {
   width: 2.5rem;
 }
 
+body {
+  position: relative !important;
+}
+
 .content {
   margin: 10rem 3rem 4rem 3rem;
 }
@@ -293,16 +296,17 @@ svg .opened .line2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-.comment-section .cmt .author img {
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  margin: 0 1rem 0 0;
+.comment-section .cmt .author p, .comment-section .cmt .author h5 {
+  margin: 5px 0;
 }
 
 .comment-section .write__comment {
@@ -329,6 +333,7 @@ svg .opened .line2 {
 .comment-section .write__comment input[type="submit"] {
   display: block;
   width: 10rem;
+  font-size: 1.3rem;
   border: none;
   cursor: pointer;
   font-family: Google Sans;

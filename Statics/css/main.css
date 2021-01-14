@@ -390,7 +390,6 @@ svg .opened .line2 {
 
 .nav #logo__disappear {
   display: inline;
-  margin: 0 2px;
   -webkit-transition: .2s ease-in-out;
   transition: .2s ease-in-out;
 }

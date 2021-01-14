@@ -5,7 +5,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Origami - Lịch sử Origami</title>
-    <link rel="icon" href="/static/Image/origami.png" type="image/gif" sizes="16x16" />
+    <link
+      rel="icon"
+      href="/static/Image/origami.png"
+      type="image/gif"
+      sizes="16x16"
+    />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;800&display=swap"
@@ -13,7 +18,10 @@
     <link rel="stylesheet" href="{% static 'blog_css/blog.css' %}" />
   </head>
   <body>
-    <nav w3-include-html="{% static 'HTML/nav.min.html' %}" class="po__fixed"></nav>
+    <nav
+      w3-include-html="{% static 'HTML/nav.min.html' %}"
+      class="po__fixed"
+    ></nav>
     <article class="content">
       <h1 style="font-size: 4rem">Lược sử Origami</h1>
       <div class="article borr-1">
@@ -94,31 +102,26 @@
       </div>
     </article>
     <section class="comment-section">
-      <h2>Comments</h2>
+      <h2>Bình luận</h2>
+      {% for cmt in all_comment %}
       <article class="cmt">
         <div class="author">
-          <img src="../static/Image/hung.jpg" alt="" />
-          <p>Anonymous</p>
+          <p>{{cmt.user}}</p>
+          <h5><p>{{cmt.date}}</p></h5>
         </div>
-        <div class="cmt__content">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
-          amet, commodi omnis corporis maxime laudantium eaque accusantium
-          veniam hic beatae. Lorem ipsum dolor sit amet, consectetur adipisicing
-          elit. Cupiditate animi reiciendis at modi veritatis possimus
-          doloremque quia assumenda quis neque, quibusdam hic tempora esse optio
-          dolorum totam unde iste soluta!
-          
-        </div>
+        <div class="cmt__content">{{cmt.body|linebreaks}}</div>
       </article>
-      <section class="write__comment">
-        <h2>Leave a comment</h2>
-        <textarea id="w3review" name="w3review" rows="10" columns="50 ">
-          </textarea>
-        <input type="submit" value="Post comment" >
-      </section>
+      {% endfor %}
+      <div>
+        <form method="POST" class="write__comment">
+          {% csrf_token %}
+          <h2><label>Bình luận tại đây nè :3</label></h2>
+          {{form.body}}
+          <br />
+          <input type="submit" value="Bình luận" />
+        </form>
+      </div>
     </section>
-
-
 
     <footer
       w3-include-html="{% static 'HTML/footer.html' %}"
