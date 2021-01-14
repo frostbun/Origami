@@ -69,21 +69,12 @@ body {
 
 .cta {
   position: absolute;
-  right: calc(28.78% - 10rem);
-  bottom: 12%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  right: calc(29% - 3rem);
+  bottom: 14%;
   color: white;
-  width: 10rem;
-  padding: 10px;
   cursor: pointer;
   -webkit-transition: .2s ease-in;
   transition: .2s ease-in;
-  overflow: hidden;
   font-size: 1rem;
   line-height: 3rem;
   border-radius: 1.5rem;
@@ -107,6 +98,7 @@ body {
   -webkit-transition: .2s linear;
   transition: .2s linear;
   text-decoration: none;
+  overflow: hidden;
 }
 
 .cta_a b {
@@ -118,7 +110,7 @@ body {
 
 .cta_a:hover {
   background: #3498db;
-  width: 12rem;
+  width: 10rem;
 }
 
 .cta_a:hover b {
