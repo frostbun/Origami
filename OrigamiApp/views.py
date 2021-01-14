@@ -24,7 +24,7 @@ def lichsu(request):
             cmt.save()
             return HttpResponseRedirect(request.path)
 
-    all_comment = Comment.objects.filter().order_by('date').reverse
+    all_comment = Comment.objects.all().order_by('date').reverse
 
     return render(request, 'lichsu.html', {'all_comment': all_comment,
                                             'form':UploadCmt})
@@ -122,6 +122,8 @@ def profile(request):
             profile = UserProfile.objects.get(user = request.user)
             profile.pic = profile_form.cleaned_data['pic']
             profile.save()
+
+        return HttpResponseRedirect(request.path)
 
     all_blog = UserBlog.objects.filter(user = request.user).order_by('date_posted').reverse
     user_profile = UserProfile.objects.get(user = request.user)
