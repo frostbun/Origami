@@ -119,7 +119,7 @@
   </form>
   </div>
   
-  {% for cmt in user.cmts.all %}
+  {% for cmt in all_comment %}
   <div class="container" style="border: 3px dotted rgb(153, 255, 51); border-radius: 25px">
     <h4><strong>{{cmt.user}}</strong></h4>
     <h5><p>{{cmt.date}}</p></h5>
