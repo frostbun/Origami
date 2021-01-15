@@ -219,10 +219,6 @@ body {
   transition: .2s ease-in-out;
 }
 
-.signout a:hover {
-  letter-spacing: 2px;
-}
-
 .signout:hover::before, .signout:hover::after {
   -webkit-transform: scaleX(1);
           transform: scaleX(1);
