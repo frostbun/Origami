@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from django.shortcuts import redirect
+from django.conf import settings
 
 from . import forms
 from OrigamiApp.forms import UserSignUp, UserProfileSignUp, UploadBlog, UploadCmt
@@ -14,9 +16,12 @@ from django.db.models import Model
 def index(request):
     return render(request, 'index.html')
 
-@login_required    
+# @login_required    
 def lichsu(request):
     if request.method == 'POST':
+        if not request.user.is_authenticated:
+            return redirect('%s?next=%s' % (settings.LOGIN_URL, request.path))
+
         cmt_form = UploadCmt(request.POST)
         if cmt_form.is_valid():
             cmt = cmt_form.save(commit=False)
@@ -103,7 +108,7 @@ def signin(request):
         
         return render(request, 'signin.html', {'error': error,
                                                 'username': username})
-
+                                                
     return render(request, 'signin.html')
           
 def signup(request):
