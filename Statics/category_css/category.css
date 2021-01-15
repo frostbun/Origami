@@ -114,6 +114,10 @@ nav label {
   opacity: 0;
 }
 
+.transpr .nav {
+  background: none !important;
+}
+
 svg {
   height: 2.5rem;
   width: 2.5rem;

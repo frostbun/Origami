@@ -114,6 +114,10 @@ nav label {
   opacity: 0;
 }
 
+.transpr .nav {
+  background: none !important;
+}
+
 svg {
   height: 2.5rem;
   width: 2.5rem;
@@ -243,7 +247,19 @@ body {
 }
 
 .content {
-  margin: 10rem 2rem 4rem 2rem;
+  margin: 0 0 4rem 0;
+}
+
+.content .title {
+  height: 80vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .content h1 {
@@ -259,14 +275,13 @@ body {
 .article {
   background: #fff;
   color: #111;
-  padding: 3rem 2rem;
-  font-size: 1.5rem;
-  line-height: 2rem;
+  padding: 3rem 15rem;
+  font-size: 2rem;
+  line-height: 3rem;
 }
 
 .article h1 {
-  font-size: 2rem;
-  line-height: 2.1rem;
+  font-size: 4rem;
 }
 
 .comment-section {

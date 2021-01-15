@@ -32,19 +32,6 @@ function includeHTML() {
 
 // Phát hiện hướng cuộn cho logo
 
-window.onscroll = function (e) {
-  var logo = document.getElementById("logo__disappear");
-
-  if (this.oldScroll < this.scrollY) {
-    logo.style.marginRight = "-6rem";
-    logo.style.opacity = "0";
-  } else {
-    logo.style.marginRight = "0";
-    logo.style.opacity = "1";
-  }
-
-  this.oldScroll = this.scrollY;
-};
 
 // Cho phần liên hệ
 
@@ -63,3 +50,27 @@ function hidename() {
 function back() {
   window.history.back();
 }
+
+
+window.onscroll = function (f) {
+  var navs = document.getElementsByClassName("nav");
+
+  if (window.pageYOffset <= 100) {
+    var navs = document.querySelector("nav");
+    navs.classList.add("transpr");
+  } else {
+    navs = document.querySelector("nav");
+    navs.classList.remove("transpr");
+  }
+  var logo = document.getElementById("logo__disappear");
+
+  if (this.oldScroll < this.scrollY) {
+    logo.style.marginRight = "-6rem";
+    logo.style.opacity = "0";
+  } else {
+    logo.style.marginRight = "0";
+    logo.style.opacity = "1";
+  }
+
+  this.oldScroll = this.scrollY;
+};

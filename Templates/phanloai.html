@@ -99,7 +99,7 @@
       <article class="cmt">
         <div class="author">
           <div class="author__name">
-            {% if user_profile.pic %}
+            {% if cmt.user.pic %}
             <img src="../media/{{ user_profile.pic }}" alt="" />
             {% else %}
             <img src="{% static 'Image/blank_avt.jpg' %}" alt="" />
