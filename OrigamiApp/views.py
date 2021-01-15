@@ -48,7 +48,7 @@ def kythuat(request):
 
     post_cmt = Comment.objects.filter(trang = "kythuat").order_by('date').reverse
 
-    return render(request, 'lichsu.html', {'post_cmt': post_cmt,
+    return render(request, 'kythuat.html', {'post_cmt': post_cmt,
                                             'form':UploadCmt})
 
 # @login_required
@@ -64,7 +64,7 @@ def phanloai(request):
 
     post_cmt = Comment.objects.filter(trang = "phanloai").order_by('date').reverse
 
-    return render(request, 'lichsu.html', {'post_cmt': post_cmt,
+    return render(request, 'phanloai.html', {'post_cmt': post_cmt,
                                             'form':UploadCmt})
 
 # @login_required
@@ -80,7 +80,7 @@ def ungdung(request):
 
     post_cmt = Comment.objects.filter(trang = "ungdung").order_by('date').reverse
 
-    return render(request, 'lichsu.html', {'post_cmt': post_cmt,
+    return render(request, 'ungdung.html', {'post_cmt': post_cmt,
                                             'form':UploadCmt})
 
 def docthem(request):
