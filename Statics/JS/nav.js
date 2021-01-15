@@ -29,6 +29,9 @@ function includeHTML() {
     }
   }
 }
+
+// Phát hiện hướng cuộn cho logo
+
 window.onscroll = function (e) {
   var logo = document.getElementById("logo__disappear");
 
@@ -43,6 +46,8 @@ window.onscroll = function (e) {
   this.oldScroll = this.scrollY;
 };
 
+// Cho phần liên hệ
+
 function showname(i) {
   var p = document.getElementById("contact__desc");
   p.innerHTML = i;
@@ -53,9 +58,8 @@ function hidename() {
   p.innerHTML = "Hover or click in avatar";
 }
 
-function back(){
+//
+
+function back() {
   window.history.back();
 }
-
-
-

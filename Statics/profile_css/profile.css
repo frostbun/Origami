@@ -169,11 +169,53 @@ body {
   border-radius: 7%;
 }
 
+.signout {
+  position: relative;
+}
+
 .signout a {
   display: inline;
   color: white;
   font-size: large;
   line-height: 5rem;
   text-decoration: none;
+  letter-spacing: 0;
+}
+
+.signout::before {
+  content: " ";
+  position: absolute;
+  top: 1.5rem;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transition: .2s ease-in-out;
+  transition: .2s ease-in-out;
+}
+
+.signout::after {
+  content: " ";
+  position: absolute;
+  bottom: 1.5rem;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transition: .2s ease-in-out;
+  transition: .2s ease-in-out;
+}
+
+.signout:hover {
+  letter-spacing: 2px;
+}
+
+.signout:hover::before, .signout:hover::after {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
 }
 /*# sourceMappingURL=profile.css.map */
