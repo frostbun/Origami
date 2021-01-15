@@ -31,9 +31,10 @@ def lichsu(request):
         return HttpResponseRedirect(request.path)
 
     post_cmt = Comment.objects.filter(trang = "lichsu").order_by('date').reverse
-
+    user_profile = UserProfile.objects.get(user = request.user)
     return render(request, 'lichsu.html', {'post_cmt': post_cmt,
-                                            'form':UploadCmt})
+                                            'form':UploadCmt,
+                                            'user_profile': user_profile} )
 
 @login_required
 def kythuat(request):
