@@ -114,13 +114,16 @@ body
 
 .signout
   position: relative
+  display: flex
+  align-items: center
   a
     display: inline
     color: white
     font-size: large
-    line-height: 5rem
+    padding: 2rem 0
     text-decoration: none
-    letter-spacing: 0 
+    transition: .2s ease-in-out
+    transform: translateX(0px)
   &::before
     content: " "
     position: absolute
@@ -141,7 +144,7 @@ body
     background: #fff
     transform: scaleX(0)
     transition: .2s ease-in-out
-  &:hover
+  a:hover 
     letter-spacing: 2px
   &:hover::before, &:hover::after
     transform: scaleX(1)
