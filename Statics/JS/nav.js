@@ -30,7 +30,7 @@ function includeHTML() {
   }
 }
 
-// Phát hiện hướng cuộn cho logo
+
 
 
 // Cho phần liên hệ
@@ -62,6 +62,8 @@ window.onscroll = function (f) {
     navs = document.querySelector("nav");
     navs.classList.remove("transpr");
   }
+  // Seperate
+  // Phát hiện hướng cuộn cho logo
   var logo = document.getElementById("logo__disappear");
 
   if (this.oldScroll < this.scrollY) {
