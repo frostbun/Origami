@@ -31,12 +31,11 @@ def lichsu(request):
         return HttpResponseRedirect(request.path)
 
     post_cmt = Comment.objects.filter(trang = "lichsu").order_by('date').reverse
-    user_profile = UserProfile.objects.get(user = request.user)
-    return render(request, 'lichsu.html', {'post_cmt': post_cmt,
-                                            'form':UploadCmt,
-                                            'user_profile': user_profile} )
 
-@login_required
+    return render(request, 'lichsu.html', {'post_cmt': post_cmt,
+                                            'form':UploadCmt})
+
+# @login_required
 def kythuat(request):
     if request.method == 'POST':
         cmt_form = UploadCmt(request.POST)
@@ -52,7 +51,7 @@ def kythuat(request):
     return render(request, 'lichsu.html', {'post_cmt': post_cmt,
                                             'form':UploadCmt})
 
-@login_required
+# @login_required
 def phanloai(request):
     if request.method == 'POST':
         cmt_form = UploadCmt(request.POST)
@@ -68,7 +67,7 @@ def phanloai(request):
     return render(request, 'lichsu.html', {'post_cmt': post_cmt,
                                             'form':UploadCmt})
 
-@login_required
+# @login_required
 def ungdung(request):
     if request.method == 'POST':
         cmt_form = UploadCmt(request.POST)

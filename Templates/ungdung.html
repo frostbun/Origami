@@ -106,7 +106,14 @@
       {% for cmt in post_cmt %}
       <article class="cmt">
         <div class="author">
-          <p>{{cmt.user}}</p>
+          <div class="author__name">
+            {% if user_profile.pic %}
+            <img src="../media/{{ user_profile.pic }}" alt="" />
+            {% else %}
+            <img src="{% static 'Image/blank_avt.jpg' %}" alt="" />
+            {% endif %}
+            <h4>{{cmt.user}}</h4>
+          </div>
           <h5><p>{{cmt.date}}</p></h5>
         </div>
         <div class="cmt__content">{{cmt.body|linebreaks}}</div>

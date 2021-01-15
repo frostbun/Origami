@@ -234,6 +234,10 @@ svg .line2 {
   width: 2.5rem;
 }
 
+*:focus {
+  outline: none;
+}
+
 body {
   position: relative !important;
 }
@@ -256,8 +260,8 @@ body {
   background: #fff;
   color: #111;
   padding: 3rem 2rem;
-  font-size: 1.2rem;
-  line-height: 1.5rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 
 .article h1 {
@@ -297,13 +301,31 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  font-size: 1.2rem;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.comment-section .cmt .author__name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  gap: 1rem;
+}
+
+.comment-section .cmt .author__name h4 {
+  margin: 1rem 0;
+}
+
+.comment-section .cmt .author__name img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
 }
 
 .comment-section .cmt .author p, .comment-section .cmt .author h5 {
