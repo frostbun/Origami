@@ -29,7 +29,7 @@ def lichsu(request):
             cmt.user = request.user
             cmt.profile = UserProfile.objects.get(user = request.user)
             cmt.save()
-        return HttpResponseRedirect(request.path)
+        return HttpResponseRedirect(request.path +'#here')
 
     post_cmt = Comment.objects.filter(trang = "lichsu").order_by('date').reverse
 
@@ -49,7 +49,7 @@ def kythuat(request):
             cmt.user = request.user
             cmt.profile = UserProfile.objects.get(user = request.user)
             cmt.save()
-        return HttpResponseRedirect(request.path)
+        return HttpResponseRedirect(request.path + '#here')
 
     post_cmt = Comment.objects.filter(trang = "kythuat").order_by('date').reverse
 
@@ -69,7 +69,7 @@ def phanloai(request):
             cmt.user = request.user
             cmt.profile = UserProfile.objects.get(user = request.user)
             cmt.save()
-        return HttpResponseRedirect(request.path)
+        return HttpResponseRedirect(request.path + '#here')
 
     post_cmt = Comment.objects.filter(trang = "phanloai").order_by('date').reverse
 
@@ -89,7 +89,7 @@ def ungdung(request):
             cmt.user = request.user
             cmt.profile = UserProfile.objects.get(user = request.user)
             cmt.save()
-        return HttpResponseRedirect(request.path)
+        return HttpResponseRedirect(request.path + '#here')
 
     post_cmt = Comment.objects.filter(trang = "ungdung").order_by('date').reverse
 
@@ -114,6 +114,7 @@ def signin(request):
             if user.is_active:
                 login(request, user)
                 return HttpResponseRedirect('/')
+                # return redirect('%s?next=%s' % (settings.LOGIN_URL, request.path))
             else:
                 error = 'User not active!'
         else:
@@ -167,6 +168,9 @@ def blog(request):
 
 @login_required
 def profile(request):
+    # if not request.user.is_authenticated:
+    #     return redirect('%s?next=%s' % (settings.LOGIN_URL, request.path))
+
     if request.method == 'POST':
         blog_form = UploadBlog(request.POST, request.FILES)
         if blog_form.is_valid():

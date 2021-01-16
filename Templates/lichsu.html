@@ -77,7 +77,7 @@
         đã được làm ra từ giấy.
       </div>
     </article>
-    <section class="comment-section">
+    <section class="comment-section" id="here">
       <h2>Bình luận</h2>
       {% for cmt in post_cmt %}
       <article class="cmt">
@@ -88,13 +88,14 @@
             {% else %}
             <img src="{% static 'Image/blank_avt.jpg' %}" alt="" />
             {% endif %}
-            <h4>{{cmt.user}}</h4>
+            <h4>{{cmt.user.first_name}}</h4>
           </div>
           <h5><p>{{cmt.date}}</p></h5>
         </div>
         <div class="cmt__content">{{cmt.body|linebreaks}}</div>
       </article>
       {% endfor %}
+      {% if user.is_authenticated %}
       <div>
         <form method="POST" class="write__comment">
           {% csrf_token %}
@@ -104,6 +105,9 @@
           <input type="submit" value="Bình luận" />
         </form>
       </div>
+      {% else %}
+      <a href="/signin" style="font-size: 2rem; text-align: center; display: block; color: #3498db;">Chưa đăng nhập ? Đăng nhập và bình luận ngay !</a>
+      {% endif %}
     </section>
     <footer
       w3-include-html="{% static 'HTML/footer.html' %}"

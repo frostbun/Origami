@@ -129,7 +129,7 @@
         nên 16 chiếc gai.
       </div>
     </article>
-    <section class="comment-section">
+    <section class="comment-section" id="here">
       <h2>Bình luận</h2>
       {% for cmt in post_cmt %}
       <article class="cmt">
@@ -147,6 +147,7 @@
         <div class="cmt__content">{{cmt.body|linebreaks}}</div>
       </article>
       {% endfor %}
+      {% if user.is_authenticated %}
       <div>
         <form method="POST" class="write__comment">
           {% csrf_token %}
@@ -156,6 +157,9 @@
           <input type="submit" value="Bình luận" />
         </form>
       </div>
+      {% else %}
+      <a href="/signin" style="font-size: 2rem; text-align: center; display: block; color: #3498db;">Chưa đăng nhập ? Đăng nhập và bình luận ngay !</a>
+      {% endif %}
     </section>
     <footer
       w3-include-html="{% static 'HTML/footer.html' %}"

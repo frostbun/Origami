@@ -10,7 +10,8 @@
 }
 
 .hello {
-  font-size: 4rem;
+  max-width: 90vw;
+  font-size: 3.5rem;
 }
 
 .cta {
