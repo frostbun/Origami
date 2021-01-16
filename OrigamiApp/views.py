@@ -27,6 +27,7 @@ def lichsu(request):
             cmt = cmt_form.save(commit=False)
             cmt.trang = "lichsu"
             cmt.user = request.user
+            cmt.profile = UserProfile.objects.get(user = request.user)
             cmt.save()
         return HttpResponseRedirect(request.path)
 
@@ -38,11 +39,15 @@ def lichsu(request):
 # @login_required
 def kythuat(request):
     if request.method == 'POST':
+        if not request.user.is_authenticated:
+            return redirect('%s?next=%s' % (settings.LOGIN_URL, request.path))
+
         cmt_form = UploadCmt(request.POST)
         if cmt_form.is_valid():
             cmt = cmt_form.save(commit=False)
             cmt.trang = "kythuat"
             cmt.user = request.user
+            cmt.profile = UserProfile.objects.get(user = request.user)
             cmt.save()
         return HttpResponseRedirect(request.path)
 
@@ -54,11 +59,15 @@ def kythuat(request):
 # @login_required
 def phanloai(request):
     if request.method == 'POST':
+        if not request.user.is_authenticated:
+            return redirect('%s?next=%s' % (settings.LOGIN_URL, request.path))
+
         cmt_form = UploadCmt(request.POST)
         if cmt_form.is_valid():
             cmt = cmt_form.save(commit=False)
             cmt.trang = "phanloai"
             cmt.user = request.user
+            cmt.profile = UserProfile.objects.get(user = request.user)
             cmt.save()
         return HttpResponseRedirect(request.path)
 
@@ -70,11 +79,15 @@ def phanloai(request):
 # @login_required
 def ungdung(request):
     if request.method == 'POST':
+        if not request.user.is_authenticated:
+            return redirect('%s?next=%s' % (settings.LOGIN_URL, request.path))
+
         cmt_form = UploadCmt(request.POST)
         if cmt_form.is_valid():
             cmt = cmt_form.save(commit=False)
             cmt.trang = "ungdung"
             cmt.user = request.user
+            cmt.profile = UserProfile.objects.get(user = request.user)
             cmt.save()
         return HttpResponseRedirect(request.path)
 

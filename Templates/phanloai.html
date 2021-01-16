@@ -134,8 +134,8 @@
       <article class="cmt">
         <div class="author">
           <div class="author__name">
-            {% if cmt.user.pic %}
-            <img src="../media/{{ user_profile.pic }}" alt="" />
+            {% if cmt.profile.pic %}
+            <img src="../media/{{ cmt.profile.pic }}" alt="" />
             {% else %}
             <img src="{% static 'Image/blank_avt.jpg' %}" alt="" />
             {% endif %}

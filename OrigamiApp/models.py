@@ -21,6 +21,7 @@ class UserBlog(models.Model):
 
 class Comment(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    profile = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
     trang = models.CharField(max_length=63, default="something")
     body = models.TextField()
     date = models.DateTimeField(auto_now_add=True)
