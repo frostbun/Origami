@@ -562,15 +562,12 @@ svg .line2 {
   }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 850px) {
   .wrapper {
     display: block !important;
   }
   .wrapper .card__container a {
     width: 100% !important;
-  }
-  .wrapper .side {
-    display: none;
   }
   .hero {
     -ms-grid-columns: 1fr;

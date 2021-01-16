@@ -282,6 +282,19 @@ body {
 
 .article h1 {
   font-size: 4rem;
+  line-height: 5rem;
+}
+
+.article .cap {
+  text-align: center;
+  font-size: 1.3rem;
+  line-height: 1.5rem;
+  color: #444;
+  margin: 4px;
+}
+
+.article img {
+  width: 100%;
 }
 
 .comment-section {
@@ -522,15 +535,12 @@ body {
   }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 850px) {
   .wrapper {
     display: block !important;
   }
   .wrapper .card__container a {
     width: 100% !important;
-  }
-  .wrapper .side {
-    display: none;
   }
   .hero {
     -ms-grid-columns: 1fr;

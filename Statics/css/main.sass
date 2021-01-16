@@ -39,7 +39,7 @@ $gradient: linear-gradient(130deg,#ff7a18,#af002d 41.07%,#319197 76.05%)
     border-radius: 50%
     transition: .2s linear
 .hero
-  margin-top: 6rem
+  margin: 6rem 3vw 0 3vw
   grid-template-columns: 50% 50%
   background: #eee
   color: #222
@@ -69,8 +69,11 @@ $gradient: linear-gradient(130deg,#ff7a18,#af002d 41.07%,#319197 76.05%)
     z-index: 5
     padding: 3rem
     align-items: start
+    line-height: 1.5rem
     h1
       position: relative
+      line-height: 3rem
+      margin: 1rem 0
       &::after
         content: ""
         position: absolute
@@ -79,11 +82,9 @@ $gradient: linear-gradient(130deg,#ff7a18,#af002d 41.07%,#319197 76.05%)
         bottom: 0
         left: 0
         background-color: #222
-        visibility: hidden
         transform: scaleX(0)
         transition: all 0.2s ease-in-out 0s
       &:hover::after
-        visibility: visible
         transform: scaleX(1)
 .populars
   padding: 1rem 0.5rem

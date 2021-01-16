@@ -62,7 +62,7 @@ window.onscroll = function (f) {
     navs = document.querySelector("nav");
     navs.classList.remove("transpr");
   }
-  // Seperate
+  // Separate
   // Phát hiện hướng cuộn cho logo
   var logo = document.getElementById("logo__disappear");
 
