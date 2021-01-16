@@ -372,6 +372,8 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   background: #555;
   border-radius: 2rem;
   padding: 2rem 2rem;
@@ -381,7 +383,6 @@ body {
 .comment-section .cmt .author {
   padding-right: 1rem;
   margin-right: 1rem;
-  border-right: 2px solid #333;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
