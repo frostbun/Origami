@@ -293,8 +293,67 @@ body {
   margin: 4px;
 }
 
-.article img {
-  width: 100%;
+.article .origami_model {
+  background: url("/static/Image/origami_model.png");
+}
+
+.article .history-origami {
+  background: url("/static/Image/history-origami.jpg");
+}
+
+.article .kythuat {
+  background: url("/static/Image/kythuat.jpg");
+}
+
+.article .paper {
+  background: url("/static/Image/paper.png");
+}
+
+.article .boneclip {
+  background: url("/static/Image/boneclip.png");
+}
+
+.article .band {
+  background: url("/static/Image/band.png");
+}
+
+.article .phanloai {
+  background: url("/static/Image/phanloai.png");
+}
+
+.article .buffalo {
+  background: url("/static/Image/buffalo.png");
+}
+
+.article .butterfly {
+  background: url("/static/Image/butterfly.png");
+}
+
+.article .tessellation {
+  background: url("/static/Image/tessellation.png");
+}
+
+.article .castle {
+  background: url("/static/Image/castle.png");
+}
+
+.article .pentagon {
+  background: url("/static/Image/pentagon.png");
+}
+
+.article .spring {
+  background: url("/static/Image/spring.png");
+}
+
+.article .img {
+  width: 100vw;
+  height: 70vh;
+  margin-left: 35vw;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
 }
 
 .comment-section {
